@@ -9,3 +9,10 @@
 ## Model
 
 Sonnet (suggested on 2026-11-12): routine site work.
+
+## State, 2026-11-12
+
+`.github/workflows/pages.yml` and the README's Deploying section exist and
+are committed, not pushed. Pushing main triggers the first deploy once the
+repository's Pages source reads "GitHub Actions". Left for the learner to
+approve: the push, the Pages setting, and a check of the published URL.

@@ -12,3 +12,9 @@
 ## Model
 
 Fable (suggested on 2026-11-12): later work builds on this, or its examples must be exactly right.
+
+## Anonymity re-check
+
+Repeat the `anonymity-audit` search on the final `_site/` (names, handles,
+email addresses, machine paths, external assets, scripts, author meta) after
+the last content change and before the learner pushes.
