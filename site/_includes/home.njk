@@ -1,0 +1,18 @@
+---
+layout: base.njk
+---
+<article class="home">
+  <h1>{{ title }}</h1>
+  {% if subtitle %}<p class="lede">{{ subtitle }}</p>{% endif %}
+  {{ content | safe }}
+  <h2>The twelve weeks</h2>
+  <ol class="week-cards">
+    {%- for w in collections.weeks %}
+    <li>
+      <a href="{{ w.url | url }}"><span class="num">Week {{ w.data.week }}</span> {{ w.data.title }}</a>
+      {%- if w.data.duration_target %}<span class="meta">Target: {{ w.data.duration_target }}</span>{% endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+  <p><a href="{{ '/syllabus/' | url }}">Syllabus</a> · <a href="{{ '/appendices/' | url }}">Appendices</a> · <a href="{{ '/reader/' | url }}">Whole course on one page</a></p>
+</article>

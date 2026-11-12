@@ -3,3 +3,5 @@
 
 # The manufacturer holds copyright in the manual; keep it out of the public repository.
 *.pdf
+node_modules/
+_site/

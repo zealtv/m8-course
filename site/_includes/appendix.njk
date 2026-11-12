@@ -1,0 +1,34 @@
+---
+layout: base.njk
+---
+{%- set prev = collections.appendices | getPreviousCollectionItem(page) -%}
+{%- set next = collections.appendices | getNextCollectionItem(page) -%}
+<article class="appendix">
+  <p class="kicker">Appendix</p>
+  <h1>{{ title }}</h1>
+  {% set contents = content | toc %}
+  {% if contents %}
+  <nav class="toc" aria-label="On this page">
+    <h2>On this page</h2>
+    {{ contents | safe }}
+  </nav>
+  {% endif %}
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  {% if page.url == '/appendices/' %}
+  {% if collections.appendices.length %}
+  <h2>All appendices</h2>
+  <ul class="plain">
+    {%- for a in collections.appendices %}
+    <li><a href="{{ a.url | url }}">{{ a.data.title }}</a></li>
+    {%- endfor %}
+  </ul>
+  {% endif %}
+  {% else %}
+  <nav class="pager" aria-label="Previous and next">
+    <a rel="prev" href="{{ (prev.url if prev else '/appendices/') | url }}"><span>Previous</span> {{ prev.data.title if prev else 'Appendices' }}</a>
+    {% if next %}<a rel="next" href="{{ next.url | url }}"><span>Next</span> {{ next.data.title }}</a>{% endif %}
+  </nav>
+  {% endif %}
+</article>

@@ -1,0 +1,39 @@
+---
+layout: base.njk
+---
+<article class="reader">
+  <h1>{{ title }}</h1>
+  <p class="lede">The syllabus, all twelve weeks and the appendices on one page, in course order. Use your browser's print command for a paper copy.</p>
+  <nav class="toc" aria-label="Whole course">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#syllabus">Syllabus</a></li>
+      {%- for w in collections.weeks %}
+      <li><a href="#{{ w.fileSlug }}">Week {{ w.data.week }}: {{ w.data.title }}</a></li>
+      {%- endfor %}
+      {%- for a in collections.appendices %}
+      <li><a href="#{{ a.fileSlug }}">Appendix: {{ a.data.title }}</a></li>
+      {%- endfor %}
+    </ol>
+  </nav>
+  {% for s in collections.syllabus %}
+  <section class="reader-part" id="syllabus">
+    <h2 class="part-title">{{ s.data.title }}</h2>
+    <div class="prose">{{ s.templateContent | forReader("syllabus") | safe }}</div>
+  </section>
+  {% endfor %}
+  {% for w in collections.weeks %}
+  <section class="reader-part" id="{{ w.fileSlug }}">
+    <p class="kicker">Week {{ w.data.week }}</p>
+    <h2 class="part-title">{{ w.data.title }}</h2>
+    <div class="prose">{{ w.templateContent | forReader(w.fileSlug) | safe }}</div>
+  </section>
+  {% endfor %}
+  {% for a in collections.appendices %}
+  <section class="reader-part" id="{{ a.fileSlug }}">
+    <p class="kicker">Appendix</p>
+    <h2 class="part-title">{{ a.data.title }}</h2>
+    <div class="prose">{{ a.templateContent | forReader(a.fileSlug) | safe }}</div>
+  </section>
+  {% endfor %}
+</article>

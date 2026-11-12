@@ -1,0 +1,35 @@
+---
+layout: base.njk
+sidebar: true
+---
+{%- set prev = collections.weeks | getPreviousCollectionItem(page) -%}
+{%- set next = collections.weeks | getNextCollectionItem(page) -%}
+<article class="module">
+  <header class="module-head">
+    <p class="kicker">Week {{ week }}{% if strand %} · {{ strand }}{% endif %}</p>
+    <h1>{{ title }}</h1>
+    <dl class="facts">
+      {%- if duration_target %}<div><dt>Duration target</dt><dd>{{ duration_target }}</dd></div>{% endif %}
+      {%- if repeat_budget %}<div><dt>Repeat budget</dt><dd>{{ repeat_budget }}</dd></div>{% endif %}
+      {%- if hours %}<div><dt>Hours</dt><dd>{{ (hours.reading + hours.lab + hours.etude + hours.review) }}</dd></div>{% endif %}
+      {%- if manual_pages %}<div><dt>Manual pages</dt><dd>{{ manual_pages }}</dd></div>{% endif %}
+      {%- if needs and needs.length %}<div><dt>Needs weeks</dt><dd>{{ needs | join(", ") }}</dd></div>{% endif %}
+    </dl>
+  </header>
+  {% set contents = content | toc %}
+  {% if contents %}
+  <nav class="toc" aria-label="In this week">
+    <h2>In this week</h2>
+    {{ contents | safe }}
+  </nav>
+  {% endif %}
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  <nav class="pager" aria-label="Previous and next">
+    {% if prev %}<a rel="prev" href="{{ prev.url | url }}"><span>Previous</span> Week {{ prev.data.week }}: {{ prev.data.title }}</a>
+    {% else %}<a rel="prev" href="{{ '/syllabus/' | url }}"><span>Previous</span> Syllabus</a>{% endif %}
+    {% if next %}<a rel="next" href="{{ next.url | url }}"><span>Next</span> Week {{ next.data.week }}: {{ next.data.title }}</a>
+    {% else %}<a rel="next" href="{{ '/appendices/' | url }}"><span>Next</span> Appendices</a>{% endif %}
+  </nav>
+</article>

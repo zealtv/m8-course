@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and page.url != '/' %}{{ title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-title" href="{{ '/' | url }}">{{ site.title }}</a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="{{ '/syllabus/' | url }}"{% if page.url == '/syllabus/' %} aria-current="page"{% endif %}>Syllabus</a>
+        <a href="{{ '/appendices/' | url }}"{% if page.url == '/appendices/' %} aria-current="page"{% endif %}>Appendices</a>
+        <a href="{{ '/reader/' | url }}"{% if page.url == '/reader/' %} aria-current="page"{% endif %}>Whole course</a>
+      </nav>
+    </div>
+  </header>
+  <div class="wrap layout{% if sidebar %} has-sidebar{% endif %}">
+    {% if sidebar %}
+    <aside class="sidebar">
+      <details class="weeklist" open>
+        <summary>Weeks</summary>
+        <ol>
+          {%- for w in collections.weeks %}
+          <li><a href="{{ w.url | url }}"{% if w.url == page.url %} aria-current="page"{% endif %}><span class="num">{{ w.data.week }}</span> {{ w.data.title }}</a></li>
+          {%- endfor %}
+        </ol>
+      </details>
+    </aside>
+    {% endif %}
+    <main id="main">
+      {{ content | safe }}
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>{{ site.disclaimer }}</p>
+    </div>
+  </footer>
+</body>
+</html>

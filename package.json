@@ -1,0 +1,17 @@
+{
+  "name": "m8-course",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A twelve-week course on composing with the Dirtywave M8 tracker, built as a static website.",
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8"
+  }
+}
