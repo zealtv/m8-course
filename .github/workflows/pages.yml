@@ -1,11 +1,11 @@
 # Builds the site and publishes it to GitHub Pages.
-# Needs Settings > Pages > Source set to "GitHub Actions" (see README.md).
+# Settings > Pages > Source reads "GitHub Actions" (see README.md).
 
 name: Deploy to GitHub Pages
 
-# Deploy deferred on 2026-11-12: manual runs only. To deploy on every push,
-# restore `push: { branches: [main] }` here.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:

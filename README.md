@@ -1,9 +1,52 @@
 # Composing with the M8
 
-A twelve-week course on composing with the Dirtywave M8 tracker, built as a
-static website with [Eleventy](https://www.11ty.dev/) from Markdown. The site
-loads no scripts, fonts or trackers from elsewhere and works with JavaScript
-off.
+**Read the course: <https://zealtv.github.io/m8-course/>**
+
+A free, twelve-week course on composing with the Dirtywave M8 tracker, at
+about five hours a week. It teaches how to make the instrument carry long,
+developed pieces rather than four-bar loops, and how to build its sounds from
+the synthesis engines.
+
+## What it covers
+
+- **Sound.** FM synthesis from first principles (bells, vibes, electric
+  pianos, basses) and a complete drum kit from the FM Synth, Macrosynth and
+  Wavsynth. No samples; the Sampler appears only for resampling.
+- **Composition.** Grooves and polyrhythm from tick arithmetic, polymeter
+  with planned realignments, variation by named operations, counterpoint for
+  monophonic tracks, harmony and texture under the one-note-per-track limit.
+- **Form.** A method for planning and finishing pieces longer than a loop:
+  an inventory, a one-page plan, named contrasts, composed transitions and a
+  repeat budget. Then mixing, automation, resampling and rendering.
+
+Each week has reading, a lab, an etude with a rubric and a listening review.
+Etudes grow from 24 bars in week 2 to a final piece of 4 to 6 minutes. The
+appendices hold a command reference, an FM crib, the arithmetic, a glossary
+and printable worksheets, and the [whole course on one page](https://zealtv.github.io/m8-course/reader/)
+prints as a single document.
+
+## What it assumes
+
+- You read music fluently and know harmony and counterpoint from practice;
+  the course does not teach theory.
+- You are at ease with programming ideas such as references, hexadecimal and
+  least common multiples.
+- You can already operate an M8 and build a short loop on it.
+- A standard hardware unit on firmware 6.6.4 and the manufacturer's manual
+  to hand (the course cites it by page). Notes mark where a headless unit
+  might differ.
+
+One caution: when the course was written, none of its patch values or
+procedures had been tried on a unit. Values stand as starting points, and
+the modules include bench tests for what the manual leaves open.
+
+The course has no affiliation with the manufacturer.
+
+## About this repository
+
+The site is static, built with [Eleventy](https://www.11ty.dev/) from
+Markdown. It loads no scripts, fonts or trackers from elsewhere and works
+with JavaScript off.
 
 ## Build and serve
 
@@ -35,10 +78,8 @@ with `PATH_PREFIX=/m8-course/` and publishes `_site/` to GitHub Pages. You can
 also run it by hand from the repository's Actions tab ("Deploy to GitHub
 Pages", then "Run workflow").
 
-Before the first deploy, set the Pages source: in the repository's Settings,
-under Pages, choose "GitHub Actions" as the source. Until that is set, the
-deploy job fails. The site publishes to `https://<owner>.github.io/m8-course/`
-and is public.
+The Pages source in the repository's Settings reads "GitHub Actions". The
+site publishes to <https://zealtv.github.io/m8-course/>.
 
 The workflow uploads the built `_site/` as an artifact rather than serving a
 branch, so GitHub's Jekyll step never runs and no `.nojekyll` file is needed.
