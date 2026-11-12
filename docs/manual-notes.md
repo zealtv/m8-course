@@ -597,3 +597,8 @@ short test on a unit; record the answer here with the date and firmware.
     file, and whether the send returns get stems. On headless, whether the
     input commands and REALTIME reach the USB audio input. (Raised while
     writing week 11, 2026-11-13.)
+28. **Bundles and backups.** Where BUNDLE writes its folder and how it
+    names it; whether it includes the renders; whether a bundled project,
+    copied off the card and back, opens with its samples found. Whether
+    CLEAR UNUSED counts chains and phrases that only the sketch area uses
+    as used. (Raised while writing week 12, 2026-11-13.)
