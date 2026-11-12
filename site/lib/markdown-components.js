@@ -4,7 +4,9 @@
 //   - tracker fences (phrase, chain, song, table, groove, patch, cycles)
 //     become <figure class="tracker tracker--TAG">;
 //   - blockquotes that open with a bold label become callouts;
-//   - [SHIFT]-style key names become <kbd> keycaps.
+//   - [SHIFT]-style key names become <kbd> keycaps;
+//   - number ranges in table cells ("17-46") are kept from breaking, and
+//     cells with a phrase of text are marked "long".
 //
 // Untagged and other-tagged fences stay ordinary code blocks.
 
@@ -16,6 +18,10 @@ const CALLOUT_LABELS = new Set(["try it", "bench test", "headless", "starting po
 
 const KEY_NAMES = ["SHIFT", "OPTION", "EDIT", "PLAY", "UP", "DOWN", "LEFT", "RIGHT"];
 const KEY_RE = new RegExp(`\\[(${KEY_NAMES.join("|")})\\]`, "g");
+
+const RANGE_RE = /\b\d+[-–]\d+\b/;
+const RANGE_SPLIT = /(\b\d+[-–]\d+\b)/;
+const LONG_CELL = 30; // characters of source text
 
 function renderLine(line, tag, esc) {
   let code = line;
@@ -97,6 +103,35 @@ export default function markdownComponents(md) {
       const label = kids[1].content.trim().replace(/\.$/, "").toLowerCase();
       if (!CALLOUT_LABELS.has(label)) continue;
       t[i].attrJoin("class", `callout callout--${label.replace(/\s+/g, "-")}`);
+    }
+  });
+
+  // Number ranges in table cells ("99-114", "75–82") never break at the dash,
+  // so a narrow Bars column does not split a range over two lines.
+  // A cell holding a phrase or more of text is marked "long", so that on a
+  // phone, where a wide table scrolls, its column keeps a readable width
+  // instead of shrinking to its longest word (see .prose td.long).
+  md.core.ruler.push("cell_ranges", (state) => {
+    let cell = null;
+    for (const block of state.tokens) {
+      if (block.type === "td_open" || block.type === "th_open") cell = block;
+      else if (block.type === "td_close" || block.type === "th_close") cell = null;
+      if (!cell || block.type !== "inline" || !block.children) continue;
+      if (block.content.length >= LONG_CELL) cell.attrJoin("class", "long");
+      const out = [];
+      for (const child of block.children) {
+        if (child.type !== "text" || !RANGE_RE.test(child.content)) {
+          out.push(child);
+          continue;
+        }
+        for (const [i, part] of child.content.split(RANGE_SPLIT).entries()) {
+          if (part === "") continue;
+          const t = new state.Token(i % 2 ? "html_inline" : "text", "", 0);
+          t.content = i % 2 ? `<span class="nobr">${esc(part)}</span>` : part;
+          out.push(t);
+        }
+      }
+      block.children = out;
     }
   });
 

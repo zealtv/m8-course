@@ -175,7 +175,8 @@ A hand clap is several impacts milliseconds apart, then a noisy tail.
 # INST 37  WAVSYNTH  "CLAP"
 SHAPE  NOISE                        ; all noise: the table gates it
 FILTER BANDPASS  CUTOFF 90  RES 30  ; a clap's energy sits mid-range
-SLOT1  DRUM  DEST: (amp level)  PEAK 00  BODY 02  DEC 0C   ; body spans the bursts; 12-tick tail
+SLOT1  DRUM  DEST: (amp level)  PEAK 00  BODY 02  DEC 0C
+                                    ; body spans the bursts; 12-tick tail
 TABLE TIC  FF                       ; 5 ms a row at any tempo
 TRANSP. OFF                         ; once bench test 9 item m allows it
 ```
@@ -241,8 +242,10 @@ Allow 1 h 45 min. Save each instrument with LOAD/SAVE (p. 16), noting its most i
    ```patch
    # INST 3F  WAVSYNTH  "PROBE"
    SHAPE  SINE                       ; a pure tone: every change audible
-   SLOT1  ADSR  DEST: (amp level)  attack 00, decay 00, sustain full, release 0C   ; holds until an OFF
-   TABLE TIC  06                     ; a row per step, if table ticks match sequencer ticks
+   SLOT1  ADSR  DEST: (amp level)  attack 00, decay 00, sustain full, release 0C
+                                     ; holds until an OFF
+   TABLE TIC  06                     ; a row per step,
+                                     ; if table ticks match sequencer ticks
    ```
 
    Its table holds one marker, N `0C` on row 0: an octave jump whenever the table passes row 0. Track 1 plays `C-4 64 3F` on step 0 only; track 2 plays HAT C on steps `0`, `4`, `8`, `C`. If ticks match, 16 rows × 6 = 96 ticks puts the marker on every downbeat.
@@ -309,7 +312,8 @@ Allow 1 h 45 min. Save each instrument with LOAD/SAVE (p. 16), noting its most i
    # INST 38  WAVSYNTH  "KICK WS"
    SHAPE  SINE                        ; one partial: the sweep is the sound
    SLOT1  DRUM  DEST: (amp level)  PEAK 00  BODY 06  DEC 18   ; KICK's 30 ticks
-   AMP    20  LIM SIN                 ; drive for harmonics on small speakers; the curve is unknown
+   AMP    20  LIM SIN                 ; drive for harmonics on small speakers;
+                                      ; the curve is unknown
    TABLE TIC  FF                      ; worked example 1's table
    TRANSP. OFF
    ```
@@ -318,7 +322,8 @@ Allow 1 h 45 min. Save each instrument with LOAD/SAVE (p. 16), noting its most i
 
    ```patch
    # INST 39  WAVSYNTH  "SNARE WS"
-   SHAPE  TRI                         ; the head: weak odd harmonics, if TRI matches its name
+   SHAPE  TRI                         ; the head: weak odd harmonics,
+                                      ; if TRI matches its name
    SLOT1  DRUM  DEST: (amp level)  PEAK 00  BODY 02  DEC 0C   ; SNARE's 14 ticks
    FILTER HIGHPASS  CUTOFF 30  RES 00
    TABLE TIC  FF
@@ -352,7 +357,8 @@ Allow 1 h 45 min. Save each instrument with LOAD/SAVE (p. 16), noting its most i
    OPMOD  1>LEV  .      2>LEV  2>LEV  ; macro 1: strike; macro 2: upper modes
    SLOT1  DRUM  DEST: (amp level)  PEAK 00  BODY 03  DEC 24   ; 3 + 36 = 39 ticks, 813 ms
    SLOT2  AHD   DEST: (macro MOD1) ATK 00  HOLD 00  DEC 03   ; strike: 3 ticks
-   SLOT3  AHD   DEST: (macro MOD2) ATK 00  HOLD 00  DEC 0C   ; upper modes die first, as on a head
+   SLOT3  AHD   DEST: (macro MOD2) ATK 00  HOLD 00  DEC 0C
+                                      ; upper modes die first, as on a head
    TABLE TIC  02
    TRANSP. OFF
    ```

@@ -242,9 +242,13 @@ Every class is consonant, and so are those of bars 2, 4 and 5: bar 2 runs 3, 0, 
 The rhythm table shows the recurrence at work: each bar's rhythm is chosen against the one before, so the voices never match until the cadence.
 
 ```cycles
-bar       |2 . . . . . . . . . . . . . . . |3 . . . . . . . . . . . . . . . |4 . . . . . . . . . . . . . . . |5 . . . . . . . . . . . . . . . |
-leader    |x . . . . . . . x . . . x . . . |x . x . x . x . x . x . x . . . |x . . . x . . . x . . . x . . . |x . . . x . . . x . . . x . . . |
-follower  |x . . . x . . . x . . . x . x . |x . . . . . . . x . . . x . . . |x . x . x . x . x . x . x . . . |x . . . x . . . x . . . x . . . |
+bar       |2 . . . . . . . . . . . . . . . |3 . . . . . . . . . . . . . . . |
+leader    |x . . . . . . . x . . . x . . . |x . x . x . x . x . x . x . . . |
+follower  |x . . . x . . . x . . . x . x . |x . . . . . . . x . . . x . . . |
+
+bar       |4 . . . . . . . . . . . . . . . |5 . . . . . . . . . . . . . . . |
+leader    |x . . . x . . . x . . . x . . . |x . . . x . . . x . . . x . . . |
+follower  |x . x . x . x . x . x . x . . . |x . . . x . . . x . . . x . . . |
 ```
 
 Bar 5 doubles the rhythm, for one bar, at the cadence: within the checkpoint's rule.

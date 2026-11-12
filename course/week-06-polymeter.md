@@ -41,8 +41,11 @@ Open the week-5 project: the kit, a bass and a mallet. Set 120 BPM. Keep the app
 A polyrhythm divides one span in two ways: the spans agree and the pulses differ. A **polymeter** keeps one pulse and groups it in cycles of different lengths: the pulses agree and the spans differ. Twelve steps against sixteen:
 
 ```cycles
-16 steps  |x . . . . . . . . . . . . . . . |x . . . . . . . . . . . . . . . |x . . . . . . . . . . . . . . . |x
-12 steps  |x . . . . . . . . . . . |x . . . . . . . . . . . |x . . . . . . . . . . . |x . . . . . . . . . . . |x
+16 steps  |x . . . . . . . . . . . . . . . |x . . . . . . . . . . . . . . .
+12 steps  |x . . . . . . . . . . . |x . . . . . . . . . . . |x . . . . . . .
+
+16 steps  |x . . . . . . . . . . . . . . . |x
+12 steps   . . . . |x . . . . . . . . . . . |x
 ```
 
 Each `x` marks the start of a cycle. Every 16th note lines up; the cycle starts do not. Two cycles of *a* and *b* steps that start together next start together after lcm(*a*, *b*) steps: lcm(16, 12) = 48 steps, which is three bars of sixteen and four passes of twelve.
@@ -74,7 +77,8 @@ You met this in week 1 at a coarser grain (chains of 3 and 4 bars meet after 12 
 3  C-3 50 10  .        .   .
 6  D#3 64 10  .        .   .
 8  G-3 50 10  .        .   .
-B  A#2 64 10  HOP 00   .   .      ; row B sounds, then on to row 0 of the next phrase: 12 steps, 72 ticks
+B  A#2 64 10  HOP 00   .   .      ; row B sounds, then on to row 0 of the next phrase:
+                                  ; 12 steps, 72 ticks
 ```
 
 The "next phrase" is the next row of the chain, so a chain of four of these lasts 4 × 12 = 48 steps, three bars. A `HOP` with y above zero enters the next phrase part-way down, which shortens that one from the front; this module keeps y at `0`. The notes say nothing about the first digit in a phrase, so leave it at `0`.
@@ -207,9 +211,13 @@ Kick on track 1 in 16-step phrases, bass on track 5 in the 12-step phrase 20 and
 Row *r* starts at bar 3*r* + 1 on both tracks. Within each row the bass starts its passes on steps `0`, `C`, `8` and `4` of successive bars:
 
 ```cycles
-bar       |1 . . . . . . . . . . . . . . . |2 . . . . . . . . . . . . . . . |3 . . . . . . . . . . . . . . . |4
-kick 16   |x . . . x . . . x . . . x . . . |x . . . x . . . x . . . x . . . |x . . . x . . . x . . . x . . . |x
-bass 12   |C . . C . . D . G . . A |C . . C . . D . G . . A |C . . C . . D . G . . A |C . . C . . D . G . . A |C
+bar       |1 . . . . . . . . . . . . . . . |2 . . . . . . . . . . . . . . .
+kick 16   |x . . . x . . . x . . . x . . . |x . . . x . . . x . . . x . . .
+bass 12   |C . . C . . D . G . . A |C . . C . . D . G . . A |C . . C . . D .
+
+bar       |3 . . . . . . . . . . . . . . . |4
+kick 16   |x . . . x . . . x . . . x . . . |x
+bass 12    G . . A |C . . C . . D . G . . A |C
 ```
 
 Letters stand for the notes of phrase 20 (`D` for `D#3`, `A` for `A#2`). The low `C` meets a kick on beat 1 of bar 1, beat 4 of bar 1, beat 3 of bar 2 and beat 2 of bar 3, then beat 1 of bar 4. The fourth pass is phrase 21, so the variant always falls in the same place: the last twelve steps of each period, as a turnaround.

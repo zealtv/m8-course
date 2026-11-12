@@ -341,9 +341,12 @@ Allow 1 h 45 min. Write the semitone sums before you touch the unit.
 
    ```patch
    # INST 41  WAVSYNTH  "PAD W"
-   SHAPE  PULSE 50%                    ; the square: moving SCAN then gives pulse-width modulation (pp. 50-51)
-   SLOT1  ADSR  DEST: (amp level)  attack 40, decay 00, sustain full, release 60   ; ends at an OFF
-   SLOT2  LFO   DEST: (scan)  SHAPE TRI  TRIG FREE  FREQ by ear   ; free-running, so a new note does not restart it
+   SHAPE  PULSE 50%                    ; the square: moving SCAN then gives
+                                       ; pulse-width modulation (pp. 50-51)
+   SLOT1  ADSR  DEST: (amp level)  attack 40, decay 00, sustain full, release 60
+                                       ; ends at an OFF
+   SLOT2  LFO   DEST: (scan)  SHAPE TRI  TRIG FREE  FREQ by ear
+                                       ; free-running, so a new note does not restart it
    FILTER LOWPASS  CUTOFF 50  RES 10    ; dark, so the pad sits under the guide tones
    MIXER  REV 40  MFX 30               ; width from the sends, since no pan is recorded
    ```
@@ -353,7 +356,8 @@ Allow 1 h 45 min. Write the semitone sums before you touch the unit.
    ```patch
    # INST 42  MACROSYNTH  "PAD M"
    MODEL  TRIPLE SAW                   ; a chord and pad model (pp. 76-80)
-   TIMBRE from the model page          ; the notes do not record what TIMBRE and COLOR do here
+   TIMBRE from the model page          ; the notes do not record
+                                       ; what TIMBRE and COLOR do here
    COLOR  from the model page
    SLOT1  ADSR  DEST: (amp level)  attack 30, decay 00, sustain full, release 40
    SLOT2  LFO   DEST: (cutoff)  SHAPE SIN  TRIG FREE  FREQ by ear

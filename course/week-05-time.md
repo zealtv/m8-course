@@ -271,7 +271,8 @@ By retrigger:
 ```phrase
 # PHRASE 2B  (track 2, by RET)
 4  D-3 64 31  .        .   .
-C  D-3 50 31  RET 88   .   .      ; every 8 ticks: 72, 80, 88; first digit 8 = ramp up, a starting point
+C  D-3 50 31  RET 88   .   .      ; every 8 ticks: 72, 80, 88;
+                                  ; first digit 8 = ramp up, a starting point
 ```
 
 One row, one pitch, and a crescendo if the ramp behaves. The next note on the track, at tick 96, should end it.

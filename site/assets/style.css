@@ -77,7 +77,14 @@ a:hover { text-decoration-thickness: 2px; }
 .layout { padding-top: 1.5rem; }
 main { min-width: 0; }
 article > *, .prose > * { max-width: 68ch; }
+/* The wrappers span the column; the measure applies to what they hold, so
+   tracker blocks, tables and code can use the full width. */
+article > .prose, article > .reader-part { max-width: none; }
 article > .tracker, .prose > .tracker, .prose > table, .prose > pre { max-width: 100%; }
+/* A list that holds tracker blocks (a lab's steps) spans the column, so its
+   blocks get the same width as those outside lists; its text keeps the measure. */
+.prose > :is(ol, ul):has(.tracker) { max-width: none; }
+.prose > :is(ol, ul):has(.tracker) :is(p, ol, ul, blockquote) { max-width: 68ch; }
 
 @media (min-width: 60rem) {
   .layout.has-sidebar { display: grid; grid-template-columns: 14.5rem minmax(0, 1fr); gap: 3rem; }
@@ -190,12 +197,13 @@ blockquote:not(.callout) { border-left: 3px solid var(--rule); margin-left: 0; p
 
 /* Worksheets: blank forms laid out with borders (not backgrounds) so they
    print the same with "print backgrounds" off. */
-.worksheet .prose > * { max-width: none; }
+/* The reader carries .reader-part--worksheet, where its headings sit a level lower. */
+:is(.worksheet, .reader-part--worksheet) .prose > * { max-width: none; }
 .ws-fields { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 0 0 0.9rem; }
-.ws-field { display: flex; align-items: flex-end; gap: 0.4rem; flex: 1 1 9rem; font-size: 0.8125rem; color: var(--muted); }
-.ws-field i { flex: 1; min-height: 1.5em; border-bottom: 1px solid var(--fg); }
-.worksheet .prose h2 { font-size: 1rem; margin: 1rem 0 0.35rem; padding-top: 0.3rem; }
-.worksheet .prose table.ws-grid { display: table; width: 100%; max-width: none; table-layout: fixed; border-collapse: collapse; margin-bottom: 0.5rem; font-size: 0.8125rem; }
+.ws-field { display: flex; align-items: flex-end; white-space: nowrap; gap: 0.4rem; flex: 1 1 9rem; font-size: 0.8125rem; color: var(--muted); }
+.ws-field i { flex: 1; min-width: 3rem; min-height: 1.5em; border-bottom: 1px solid var(--fg); }
+:is(.worksheet, .reader-part--worksheet) .prose :is(h2, h3) { font-size: 1rem; margin: 1rem 0 0.35rem; padding-top: 0.3rem; }
+:is(.worksheet, .reader-part--worksheet) .prose table.ws-grid { display: table; width: 100%; max-width: none; table-layout: fixed; border-collapse: collapse; margin-bottom: 0.5rem; font-size: 0.8125rem; }
 .ws-grid th, .ws-grid td { border: 1px solid var(--fg); padding: 0 0.3rem; height: 1.9rem; text-align: center; vertical-align: middle; }
 .ws-grid thead th { border-bottom: 2px solid var(--fg); background: none; font-weight: 600; }
 .ws-grid tbody tr, .ws-grid tbody tr:nth-child(even) { background: none; }
@@ -223,3 +231,23 @@ blockquote:not(.callout) { border-left: 3px solid var(--rule); margin-left: 0; p
 /* Checklists: an empty box to tick, in place of the bullet. */
 .prose li.checklist-item { list-style: none; position: relative; }
 .tick-box { position: absolute; left: -1.5em; top: 0.3em; width: 0.8em; height: 0.8em; border: 1.5px solid currentColor; border-radius: 2px; }
+
+/* Number ranges in table cells keep together (see markdown-components.js). */
+.nobr { white-space: nowrap; }
+
+/* On a phone a wide table scrolls; columns of text keep a readable width
+   rather than one word per line (cells marked in markdown-components.js). */
+@media (max-width: 40rem) {
+  .prose td.long, .prose th.long { min-width: 11rem; }
+}
+
+/* On a phone the worksheet grids stay at full width; labels break only
+   between words, never inside one ("Settin-g"). */
+@media (max-width: 30rem) {
+  :is(.worksheet, .reader-part--worksheet) .prose table.ws-grid { font-size: 0.6875rem; }
+  .ws-grid th, .ws-grid td { padding: 0 0.2rem; overflow-wrap: normal; }
+  .ws-pair { grid-template-columns: 1fr; }
+  .ws-boxes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ws-boxes div { overflow-wrap: normal; }
+  .ws-grid .narrow { width: 2.2rem; }
+}

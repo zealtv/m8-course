@@ -297,7 +297,8 @@ Allow 1 h 45 min. Keep adding to the results record: item, what you heard, firmw
 
    ```phrase
    # PHRASE 01  (track 1, scale test)
-   0  D-3 64 00  SCA 21   .   .      ; key 2 = D if the digit counts semitones from C: check the help text
+   0  D-3 64 00  SCA 21   .   .      ; key 2 = D if the digit counts semitones from C:
+                                     ; check the help text
    4  A-3 64 00  .        .   .
    8  C-4 64 00  .        .   .
    C  F#3 64 00  .        .   .      ; outside D dorian on purpose

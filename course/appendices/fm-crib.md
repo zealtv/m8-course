@@ -306,7 +306,8 @@ OPMOD  2>LEV  .      1>LEV  .      ; macro 1: tine index; macro 2: body index
 SLOT1  AHD  DEST: (macro MOD1)  ATK 00  HOLD 00  DEC 06   ; tine: a 16th
 SLOT2  AHD  DEST: (amp level)   ATK 00  HOLD 00  DEC C0   ; two bars
 SLOT3  AHD  DEST: (macro MOD2)  ATK 00  HOLD 00  DEC 60   ; body darkens over a bar
-SLOT4  TRACKING  SRC VELOCITY  DEST: MOD AMT (slot 1)  LVAL 10  HVAL 7F   ; harder = more tine
+SLOT4  TRACKING  SRC VELOCITY  DEST: MOD AMT (slot 1)  LVAL 10  HVAL 7F
+                                   ; harder = more tine
 ```
 
 The tine envelope sits in slot 1 because a slot can modulate only its
@@ -363,7 +364,8 @@ SHAPE  SIN    SIN    SIN    SIN
 RATIO  1.00   1.00   1.00   1.00   ; partials 1, 2, 3
 LEV    18     70     00     00     ; starting points; A low: a hint of harmonics
 FB     00     00     00     00
-SLOT1  AHD  DEST: (amp level)   ATK 01  HOLD 18  DEC 30   ; one tick of attack avoids a click
+SLOT1  AHD  DEST: (amp level)   ATK 01  HOLD 18  DEC 30
+                                   ; one tick of attack avoids a click
 FILTER LOWPASS  CUTOFF 50  RES 00  ; trims anything the index adds above the 3rd
 ```
 
@@ -413,7 +415,8 @@ RATIO  13.00  1.00   1.00   1.00   ; click partials 1, 12, 14, then 25, 27
 LEV    50     40     00     70     ; starting points; C silent, so D is a pure sine
 FB     00     00     00     00
 OPMOD  1>LEV  1>LEV  .      .      ; macro 1 fades the whole click pair
-SLOT1  DRUM  DEST: (amp level)  PEAK 00  BODY 06  DEC 18   ; body holds a 16th, decays over a beat
+SLOT1  DRUM  DEST: (amp level)  PEAK 00  BODY 06  DEC 18
+                                   ; body holds a 16th, decays over a beat
 SLOT2  AHD   DEST: (macro MOD1) ATK 00  HOLD 00  DEC 02   ; click: two ticks
 TABLE TIC 01         ; one tick per table row
 ```

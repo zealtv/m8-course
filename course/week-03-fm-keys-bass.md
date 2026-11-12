@@ -222,7 +222,8 @@ C  D-3 50 18  .        .  .
 ```phrase
 # PHRASE 12  (track 1, bar 3)
 0  F-3 64 18  .        .            .
-4  C-4 .  .   PSL 0C   <CUTOFF> 10  .   ; I empty: legato slide up a fifth in 12 ticks; relative +10
+4  C-4 .  .   PSL 0C   <CUTOFF> 10  .   ; I empty: legato slide up a fifth in 12 ticks;
+                                        ; relative +10
 8  .   .  .   .        <CUTOFF> 10  .   ; relative +10 again: 70, 80, 90
 C  A-3 50 18  .        .            .   ; retrigger: the relative change resets
 ```
@@ -295,19 +296,26 @@ Allow 1 h 45 min. Save every instrument with LOAD/SAVE (p. 16) and write its rat
    # INST 14  FMSYNTH  "TINE"
    ALGO   07            ; [A>B]+[C>D]: tine pair and body pair, each with its own carrier
           A      B      C      D
-   SHAPE  SIN    SIN    SIN    SIN    ; sines, so the partials stay where the arithmetic puts them
+   SHAPE  SIN    SIN    SIN    SIN    ; sines keep partials where the arithmetic puts them
    RATIO  14.00  1.00   1.00   1.00   ; tine 1, 13, 15, 27, 29; body 1, 2, 3
-   LEV    50     60     30     60     ; A peak tine index; C low body index; B, D balance the layers
+   LEV    50     60     30     60     ; A peak tine index; C low body index;
+                                      ; B, D balance the layers
    FB     00     00     00     00     ; none: feedback would fill the gap between 1 and 13
-   OPMOD1 1>LEV  .      2>LEV  .      ; first MOD slots: macro 1 the tine index, macro 2 the body
-   OPMOD2 1>PIT  .      .      .      ; A's second slot: macro 1 also bends A, so the strike starts inharmonic
-   SLOT1  TRACKING  SRC VELOCITY  DEST: (MOD AMT, slot 2)  LVAL 30  HVAL FF   ; soft notes keep a fifth of the ping
-   SLOT2  AHD  DEST: (macro MOD1)  ATK 00  HOLD 00  DEC 06   ; the ping: 6 ticks, 156 ms at 96 BPM
-   SLOT3  AHD  DEST: (macro MOD2)  ATK 00  HOLD 00  DEC 30   ; the body darkens over two beats, 48 ticks
+   OPMOD1 1>LEV  .      2>LEV  .      ; first slots: macro 1 tine index, macro 2 body
+   OPMOD2 1>PIT  .      .      .      ; A's second slot: macro 1 also bends A,
+                                      ; so the strike starts inharmonic
+   SLOT1  TRACKING  SRC VELOCITY  DEST: (MOD AMT, slot 2)  LVAL 30  HVAL FF
+                                      ; soft notes keep a fifth of the ping
+   SLOT2  AHD  DEST: (macro MOD1)  ATK 00  HOLD 00  DEC 06
+                                      ; the ping: 6 ticks, 156 ms at 96 BPM
+   SLOT3  AHD  DEST: (macro MOD2)  ATK 00  HOLD 00  DEC 30
+                                      ; the body darkens over two beats, 48 ticks
    SLOT4  AHD  DEST: (amp level)   ATK 00  HOLD 00  DEC C0   ; 192 ticks: two bars
    TABLE TIC  FC                     ; octave map: the table from worked example 1
-   FILTER LOWPASS  CUTOFF D0  RES 00 ; a gentle ceiling; resonance would colour every note alike
-   AMP    10  LIM SIN               ; slight drive: loud notes round off, if volume reaches the amp first
+   FILTER LOWPASS  CUTOFF D0  RES 00 ; a gentle ceiling;
+                                     ; resonance would colour every note alike
+   AMP    10  LIM SIN               ; slight drive: loud notes round off,
+                                    ; if volume reaches the amp first
    ```
 
    Build the octave-map table from worked example 1. Play a C in each octave from 2 to 7 at V `30` and `7F`. Find the range of A's PIT offset that sounds struck rather than out of tune.
@@ -320,16 +328,25 @@ Allow 1 h 45 min. Save every instrument with LOAD/SAVE (p. 16) and write its rat
    ALGO   05            ; [A>B>C]+D: a stack for reed and bark, a free sine for the body
           A      B      C      D
    SHAPE  SIN    SIN    SIN    SIN
-   RATIO  1.00   2.00   1.00   1.00   ; B>C at 2:1 gives 1, 3, 5, 7; A puts 1 and 3 into B, so C gains 2, 4, 6
-   LEV    40     48     60     40     ; A peak bark; B reed index, fixed; C the reed; D supports the fundamental
-   FB     00     00     00     00     ; none: the bark should come from A alone, so velocity controls it
+   RATIO  1.00   2.00   1.00   1.00   ; B>C at 2:1 gives 1, 3, 5, 7;
+                                      ; A puts 1 and 3 into B, so C gains 2, 4, 6
+   LEV    40     48     60     40     ; A peak bark; B reed index, fixed;
+                                      ; C the reed; D supports the fundamental
+   FB     00     00     00     00     ; none: the bark should come from A alone,
+                                      ; so velocity controls it
    OPMOD1 1>LEV  .      .      .      ; macro 1: bark depth
-   SLOT1  TRACKING  SRC VELOCITY  DEST: (MOD AMT, slot 2)  LVAL 00  HVAL FF   ; soft notes do not bark at all
-   SLOT2  AHD  DEST: (macro MOD1)  ATK 00  HOLD 00  DEC 0C   ; the bark lasts half a beat, 12 ticks
-   SLOT3  TRACKING  SRC NOTE  DEST: (filter cutoff)  LVAL 60  HVAL E0   ; key scaling: the filter follows pitch
-   SLOT4  AHD  DEST: (amp level)   ATK 00  HOLD 00  DEC 90   ; 144 ticks, a bar and a half: shorter than TINE
-   FILTER LOWPASS  CUTOFF 90  RES 18 ; base value for slot 3; slight resonance for the nasal edge
-   AMP    20  LIM SIN               ; more drive than TINE: the reed barks through the amp as well
+   SLOT1  TRACKING  SRC VELOCITY  DEST: (MOD AMT, slot 2)  LVAL 00  HVAL FF
+                                      ; soft notes do not bark at all
+   SLOT2  AHD  DEST: (macro MOD1)  ATK 00  HOLD 00  DEC 0C
+                                      ; the bark lasts half a beat, 12 ticks
+   SLOT3  TRACKING  SRC NOTE  DEST: (filter cutoff)  LVAL 60  HVAL E0
+                                      ; key scaling: the filter follows pitch
+   SLOT4  AHD  DEST: (amp level)   ATK 00  HOLD 00  DEC 90
+                                      ; 144 ticks, a bar and a half: shorter than TINE
+   FILTER LOWPASS  CUTOFF 90  RES 18 ; base value for slot 3;
+                                     ; slight resonance for the nasal edge
+   AMP    20  LIM SIN               ; more drive than TINE:
+                                    ; the reed barks through the amp as well
    ```
 
    B's index has no envelope: the hollow core lasts the whole note, and that frees slot 3 for key scaling. Listen for the octave filling in on a hard note.
@@ -342,12 +359,15 @@ Allow 1 h 45 min. Save every instrument with LOAD/SAVE (p. 16) and write its rat
    ALGO   0B            ; A+B+C+D: placed partials, no modulation
           A      B      C      D
    SHAPE  SIN    SIN    SIN    SIN
-   RATIO  .      .      2.00   1.00   ; D the fundamental; C the octave that small speakers can play
+   RATIO  .      .      2.00   1.00   ; D the fundamental;
+                                      ; C the octave that small speakers can play
    LEV    00     00     20     70     ; A, B silent; weight from D, pitch from C
    FB     00     00     00     00     ; none: partials above 2 would thin the sub
    OPMOD1 .      .      1>LEV  .      ; macro 1: C's level by key
-   SLOT1  AHD  DEST: (amp level)  ATK 01  HOLD 18  DEC 30    ; 1 tick against a click; one beat held, two to fade
-   SLOT2  TRACKING  SRC NOTE  DEST: (macro MOD1)  LVAL FF  HVAL 40   ; reversed: low notes get the most octave
+   SLOT1  AHD  DEST: (amp level)  ATK 01  HOLD 18  DEC 30
+                                      ; 1 tick against a click; one beat held, two to fade
+   SLOT2  TRACKING  SRC NOTE  DEST: (macro MOD1)  LVAL FF  HVAL 40
+                                      ; reversed: low notes get the most octave
    MIXER  REV 00  DEL 00            ; keep the low end out of the sends
    ```
 
@@ -360,15 +380,19 @@ Allow 1 h 45 min. Save every instrument with LOAD/SAVE (p. 16) and write its rat
    # INST 17  FMSYNTH  "PLUCK"
    ALGO   07            ; [A>B]+[C>D]: C>D the string, B a plain octave
           A      B      C      D
-   SHAPE  SIN    SIN    SAW    SIN    ; C as SAW: modulators at 1, 2, 3 ...: dense but harmonic
-   RATIO  .      2.00   1.00   1.00   ; all whole numbers, so every partial stays on a harmonic
-   LEV    00     18     58     70     ; A silent; B a faint octave; C peak index; D the note
+   SHAPE  SIN    SIN    SAW    SIN    ; C as SAW: modulators at 1, 2, 3 ...:
+                                      ; dense but harmonic
+   RATIO  .      2.00   1.00   1.00   ; whole numbers: every partial stays on a harmonic
+   LEV    00     18     58     70     ; A silent; B faint octave; C peak index; D the note
    FB     00     00     00     00     ; none: the saw already supplies the harmonics
    OPMOD1 .      .      1>LEV  .      ; macro 1: the pluck's index
-   SLOT1  TRACKING  SRC VELOCITY  DEST: (MOD AMT, slot 2)  LVAL 40  HVAL FF   ; harder plucks start brighter
-   SLOT2  AHD  DEST: (macro MOD1)  ATK 00  HOLD 00  DEC 0C   ; bright for 12 ticks, half a beat, then dark
+   SLOT1  TRACKING  SRC VELOCITY  DEST: (MOD AMT, slot 2)  LVAL 40  HVAL FF
+                                      ; harder plucks start brighter
+   SLOT2  AHD  DEST: (macro MOD1)  ATK 00  HOLD 00  DEC 0C
+                                      ; bright for 12 ticks, half a beat, then dark
    SLOT3  AHD  DEST: (amp level)   ATK 00  HOLD 00  DEC 24   ; 36 ticks: a beat and a half
-   SLOT4  TRACKING  SRC NOTE  DEST: (filter cutoff)  LVAL 70  HVAL C0   ; higher notes keep more top
+   SLOT4  TRACKING  SRC NOTE  DEST: (filter cutoff)  LVAL 70  HVAL C0
+                                      ; higher notes keep more top
    TABLE TIC  01                     ; one tick per row: the pitch drop below
    FILTER LOWPASS  CUTOFF A0  RES 20 ; base for slot 4; a little resonance marks the onset
    ```
@@ -389,17 +413,24 @@ Allow 1 h 45 min. Save every instrument with LOAD/SAVE (p. 16) and write its rat
    # INST 18  FMSYNTH  "GROWL"
    ALGO   07            ; [A>B]+[C>D]: A>B the growl, C>D the body
           A      B      C      D
-   SHAPE  SQU    SIN    SIN    SIN    ; A as SQU: modulators at 1, 3, 5 ...: a hollower set than SAW
-   RATIO  1.00   1.00   1.00   1.00   ; whole numbers throughout, so the growl stays on pitch
+   SHAPE  SQU    SIN    SIN    SIN    ; A as SQU: modulators at 1, 3, 5 ...:
+                                      ; a hollower set than SAW
+   RATIO  1.00   1.00   1.00   1.00   ; whole numbers: the growl stays on pitch
    LEV    48     60     18     60     ; A peak growl index; C a low, steady body index
    FB     10     00     00     00     ; a little on A roughens the growl
    OPMOD1 1>LEV  .      .      .      ; macro 1: growl index
-   SLOT1  LFO  DEST: (macro MOD1)  SHAPE TRI  TRIG RETRIG  FREQ 08   ; index swells and falls; every note starts alike
-   SLOT2  AHD  DEST: (amp level)  ATK 00  HOLD 30  DEC 30    ; 48 ticks held, 48 to fade: one bar in all
-   SLOT3  TRACKING  SRC VELOCITY  DEST: (amp drive)  LVAL 08  HVAL 48   ; harder notes fold harder
-   SLOT4  TRACKING  SRC NOTE  DEST: (filter cutoff)  LVAL 50  HVAL B0   ; the resonance rises with the note
-   FILTER LOWPASS  CUTOFF 70  RES 60 ; a resonant peak for the index to sweep through: the vowel
-   AMP    10  LIM FOLD              ; base drive for slot 3; folding adds harmonics that grow with it
+   SLOT1  LFO  DEST: (macro MOD1)  SHAPE TRI  TRIG RETRIG  FREQ 08
+                                      ; index swells and falls; every note starts alike
+   SLOT2  AHD  DEST: (amp level)  ATK 00  HOLD 30  DEC 30
+                                      ; 48 ticks held, 48 to fade: one bar in all
+   SLOT3  TRACKING  SRC VELOCITY  DEST: (amp drive)  LVAL 08  HVAL 48
+                                      ; harder notes fold harder
+   SLOT4  TRACKING  SRC NOTE  DEST: (filter cutoff)  LVAL 50  HVAL B0
+                                      ; the resonance rises with the note
+   FILTER LOWPASS  CUTOFF 70  RES 60 ; a resonant peak for the index
+                                     ; to sweep through: the vowel
+   AMP    10  LIM FOLD              ; base drive for slot 3;
+                                    ; folding adds harmonics that grow with it
    ```
 
    The notes give LFO FREQ in steps (p. 18); if `08` means one cycle per 8 steps, the index swells twice a bar. Check how the unit reads it, and whether an LFO can drive a macro below zero. Play bars 1 to 3 of worked example 2.
