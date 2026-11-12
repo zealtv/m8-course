@@ -3,9 +3,9 @@
 
 name: Deploy to GitHub Pages
 
+# Deploy deferred on 2026-11-12: manual runs only. To deploy on every push,
+# restore `push: { branches: [main] }` here.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
