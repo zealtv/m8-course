@@ -28,6 +28,21 @@ Leave it unset for the root (`/`) build that `npm run serve` uses. All links go
 through Eleventy's `url` filter, which applies the prefix; write new links in
 templates as `{{ '/syllabus/' | url }}`.
 
+## Deploying
+
+Pushing to `main` runs `.github/workflows/pages.yml`, which builds the site
+with `PATH_PREFIX=/m8-course/` and publishes `_site/` to GitHub Pages. You can
+also run it by hand from the repository's Actions tab ("Deploy to GitHub
+Pages", then "Run workflow").
+
+Before the first deploy, set the Pages source: in the repository's Settings,
+under Pages, choose "GitHub Actions" as the source. Until that is set, the
+deploy job fails. The site publishes to `https://<owner>.github.io/m8-course/`
+and is public.
+
+The workflow uploads the built `_site/` as an artifact rather than serving a
+branch, so GitHub's Jekyll step never runs and no `.nojekyll` file is needed.
+
 ## Layout of the repository
 
 | Path | Holds |
