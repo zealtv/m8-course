@@ -580,3 +580,20 @@ short test on a unit; record the answer here with the date and firmware.
     runs past the last song row to let effect tails decay; whether HOP FF
     on every track stops the song. (Raised while writing week 10,
     2026-11-13.)
+27. **Mixer commands, ducking and resampling.** The value scale of each
+    command on pp. 73-74, and whether it matches the value the view shows;
+    which parameter each X command drives; whether a `VT` command acts from
+    any track or only its own; how an [EDIT] capture [CL 6.6.1] reaches a
+    phrase; whether REP ramps a mixer or effect command; what EQI's and
+    EQM's values select, and whether instruments can share an EQ slot; the
+    `XRZ` values for on and off, what the freeze holds and how it releases;
+    whether DRY at its lowest silences an instrument but leaves its sends;
+    how a TRIG slot shows a negative amount, whether 80-87 map to tracks 1-8
+    in order, and whether a TRIG can reach an instrument's sends. For
+    selection to sample: whether it renders only the selected tracks, and
+    with the sends, limiter and current mix state; mono or stereo; which
+    slot the new instrument takes; which note plays it at its recorded
+    pitch; whether a rest chain stops it. What a STEMS render puts in each
+    file, and whether the send returns get stems. On headless, whether the
+    input commands and REALTIME reach the USB audio input. (Raised while
+    writing week 11, 2026-11-13.)
