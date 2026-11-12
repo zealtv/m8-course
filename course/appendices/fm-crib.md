@@ -171,7 +171,8 @@ Two placed-partial targets from week 2, for algorithms `0A` and `0B`:
 
 ## Envelope times
 
-AHD and DRUM times count ticks, so they follow tempo (p. 18). One tick lasts
+AHD times count ticks, so they follow tempo (p. 20). The manual does not say
+the same of DRUM times; they probably do, and week 4 has you check. One tick lasts
 2.5 / BPM seconds at the default 24 ticks per quarter note. The values used
 in the recipes:
 

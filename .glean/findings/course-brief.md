@@ -27,6 +27,18 @@ When planning or writing any part of the M8 course: who it is for, what the lear
 - As of 2026-11-12 nothing in the notes had been tried on a unit. Bench-test
   answers from the learner go back into the notes.
 
+- Working method agreed on 2026-11-12: one stitch at a time, each written by
+  the model named on the stitch (Fable for weeks 5, 6, 8, 10 and the final
+  review; Opus for the other weeks; Sonnet for site work), in an interactive
+  session at high effort, briefed by a file that points at the notes,
+  syllabus, template and the finished modules. Commit by path and push after
+  each. The Pages deploy stays deferred until the learner makes the
+  repository public.
+- State on 2026-11-13: weeks 1-4 and the appendices written, tied and
+  pushed; week 5 next. Weeks 1 and 2 run over the template's 5,000-word
+  guide (about 6,100 and 5,300 words), week 4 about 5,500. Only parts of
+  weeks 2 and 3 have had a second read.
+
 ## Triggers
 
 - syllabus
