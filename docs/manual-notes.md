@@ -516,3 +516,13 @@ short test on a unit; record the answer here with the date and firmware.
 13. **Deep clone and repeated phrases.** If a chain lists the same phrase
     several times, does a deep clone make one new phrase or one per row?
     (Raised while writing week 1, 2026-11-12.)
+14. **When a groove command bites.** Does `GRV` on a row act on that row or
+    from the next? Does a groove's position restart with each phrase, or run
+    on across phrase boundaries (it matters for grooves whose length does
+    not divide 16)? Which groove does a track use when playback starts below
+    the row that set it? (Raised while writing week 5, 2026-11-13.)
+15. **RET's reach.** Do retriggers carry on past the step that holds the
+    command until the next note on the track? Does x = 0 mean no volume
+    ramp? (Week 5.)
+16. **DEL longer than its step**, and **MTT's value encoding** (which values
+    move a row early, which late, and the range). (Week 5.)
