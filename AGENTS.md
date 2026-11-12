@@ -1,6 +1,6 @@
 # Working notes for agents
 
-m8-course is a new repository; its purpose has not yet been written down here (as of 2026-11-12 it held no files).
+m8-course holds a university-style, 12-week course on the Dirtywave M8 tracker, built as a public, anonymised, printable static website (Markdown + Eleventy). As of 2026-11-12 only the plan existed, on the loom under `m8-course`; `glean:course-brief` carries the learner's choices and the publishing constraints.
 
 `CLAUDE.md` is a symlink to this file, so every agent runtime reads the same notes.
 
