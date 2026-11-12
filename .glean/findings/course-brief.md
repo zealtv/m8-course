@@ -18,8 +18,14 @@ When planning or writing any part of the M8 course: who it is for, what the lear
   (`M8_V6_6_4_HEADLESS.hex`), so the firmware runs ahead of the manual.
 - Write for standard hardware with the manual's standard key names, and note
   where headless might differ. Nothing specific to the learner's own device.
-- The plan lives on the loom under `m8-course`; the draft week outline sits in
-  that goal's instructions until `docs/syllabus.md` replaces it.
+- The plan lives on the loom under `m8-course`. Three documents written on
+  2026-11-12 govern the modules: `docs/manual-notes.md` (what the instrument
+  does, with page references, changes up to firmware 6.6.4, and open
+  questions to bench-test), `docs/syllabus.md` (weeks, outcomes, the form
+  method; a draft until the learner agrees it) and `docs/module-template.md`
+  (sections, notation blocks, voice, honesty rules).
+- As of 2026-11-12 nothing in the notes had been tried on a unit. Bench-test
+  answers from the learner go back into the notes.
 
 ## Triggers
 

@@ -25,3 +25,7 @@ stitches start.
 ## Model
 
 Fable (suggested on 2026-11-12): later work builds on this, or its examples must be exactly right.
+
+## State
+
+`docs/syllabus.md` drafted on 2026-11-12. Waiting on the learner's agreement; resume, apply their changes, then tie.
