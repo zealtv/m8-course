@@ -557,3 +557,20 @@ short test on a unit; record the answer here with the date and firmware.
     has a pan or width control (these notes record only DRY and the three
     sends), and how a chain TSP below zero is entered and displayed.
     (Raised while writing week 8, 2026-11-13.)
+23. **Hypersynth chord banks.** Where the 16 banks live (per instrument or
+    per project) and how an interval is entered; the range and sign an
+    interval may take; whether the played note sounds whatever the bank
+    holds; how a phrase changes bank (a parameter command, as pp. 17 and 75
+    suggest, or only by instrument); whether SCALE quantises the bank's
+    intervals, and which way an out-of-scale interval moves; what SHIFT's
+    cross-fade gives at its midpoint; whether a new note with the I column
+    empty moves the chord without re-attacking. (Raised while writing week
+    9, 2026-11-13.)
+24. **ARP and ARC in detail.** The ARC modes (the help text); whether ARC's
+    y counts ticks per arpeggio note; whether an ARP keeps cycling after its
+    own step until the next note or command; whether the cycle restarts at
+    each new note. (Raised while writing week 9, 2026-11-13.)
+25. **What a scale's detune reaches.** Whether a detune offsets its step
+    from equal temperament or sets its pitch outright, and whether it
+    retunes notes entered in the note column or only values the scale
+    quantises (TSP, ARP, PIT). (Raised while writing week 9, 2026-11-13.)
