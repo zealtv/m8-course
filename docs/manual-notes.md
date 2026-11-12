@@ -526,3 +526,8 @@ short test on a unit; record the answer here with the date and firmware.
     ramp? (Week 5.)
 16. **DEL longer than its step**, and **MTT's value encoding** (which values
     move a row early, which late, and the range). (Week 5.)
+17. **SNG's value and timing.** How the value encodes a move up or down the
+    song, and whether the jump happens at the command or at the end of the
+    chain. Whether RMX sounds the note on its target row. Whether the
+    [OPTION] time display in song view accounts for phrases shortened by
+    HOP or a groove. (Raised while writing week 6, 2026-11-13.)
