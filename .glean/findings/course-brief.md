@@ -34,12 +34,12 @@ When planning or writing any part of the M8 course: who it is for, what the lear
   syllabus, template and the finished modules. Commit by path and push after
   each. The Pages deploy stays deferred until the learner makes the
   repository public.
-- State on 2026-11-13, about 05:45: weeks 1-10 and the appendices written,
-  tied and pushed; week 11 (Opus) next, then week 12 (Opus), the final
-  review (Fable) and the deferred deploy. Word counts run over the
+- State on 2026-11-13, about 05:50: weeks 1-11 and the appendices written,
+  tied and pushed; week 12 (Opus) next, then the final review (Fable) and
+  the deferred deploy. Work paused there at about 88% of the 5-hour window. Word counts run over the
   template's 5,000 guide in weeks 1-7 and 9 (5,300 to 7,000); weeks 8 and 10
-  sit near 5,100. Weeks 5-10 have had no second read beyond the writer's own
-  arithmetic check; weeks 7 and 9 came from a delegated Opus session and the
+  sit near 5,100. Weeks 5-11 have had no second read beyond the writer's own
+  arithmetic check; weeks 7, 9 and 11 came from a delegated Opus session and the
   orchestrating session did not read them.
 - Delegation that worked on 2026-11-13: a brief per stitch under
   `tmp/briefs/` (gitignored; `week-07.md` and `week-09.md` serve as
