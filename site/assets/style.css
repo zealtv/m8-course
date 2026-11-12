@@ -219,3 +219,7 @@ blockquote:not(.callout) { border-left: 3px solid var(--rule); margin-left: 0; p
 .ws-lines div { font-size: 0.75rem; color: var(--muted); padding-top: 0.3rem; }
 .ws-grid--tight th, .ws-grid--tight td { height: 1.55rem; }
 .ws-grid td.txt { text-align: left; color: var(--fg); font-weight: 600; }
+
+/* Checklists: an empty box to tick, in place of the bullet. */
+.prose li.checklist-item { list-style: none; position: relative; }
+.tick-box { position: absolute; left: -1.5em; top: 0.3em; width: 0.8em; height: 0.8em; border: 1.5px solid currentColor; border-radius: 2px; }

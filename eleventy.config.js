@@ -38,6 +38,25 @@ export default function (eleventyConfig) {
     });
   });
 
+  // Checklists: a list item that starts "[ ]" prints an empty box to tick on
+  // paper, with no bullet (see .checklist in style.css).
+  eleventyConfig.amendLibrary("md", (md) => {
+    md.core.ruler.push("checklists", (state) => {
+      const tokens = state.tokens;
+      for (let i = 2; i < tokens.length; i++) {
+        const t = tokens[i];
+        if (t.type !== "inline" || tokens[i - 2].type !== "list_item_open") continue;
+        const first = t.children[0];
+        if (!first || first.type !== "text" || !first.content.startsWith("[ ] ")) continue;
+        first.content = first.content.slice(4);
+        const box = new state.Token("html_inline", "", 0);
+        box.content = '<span class="tick-box" aria-hidden="true"></span>';
+        t.children.unshift(box);
+        tokens[i - 2].attrJoin("class", "checklist-item");
+      }
+    });
+  });
+
   // Pages with `draft: true` appear under `npm run serve` but not in a build.
   eleventyConfig.addPreprocessor("drafts", "*", (data) => {
     if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") return false;

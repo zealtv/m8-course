@@ -34,3 +34,10 @@ To deploy later: make the repository public, enable Pages with the "GitHub
 Actions" source (`gh api -X POST repos/<owner>/m8-course/pages -f
 build_type=workflow`), restore the push trigger in
 `.github/workflows/pages.yml`, push, and check the published URL.
+
+## README (asked by the learner on 2026-11-13)
+
+When deploying, give `README.md` a short introduction: what the course
+covers, the knowledge it assumes, that sort of thing. Put a link to the live
+site front and centre, at the top. The README sits in the public repository,
+so the anonymity rule for published pages applies to its text.

@@ -231,7 +231,7 @@ The peak needs the chord's three voices and three stretto voices, more than eigh
 | Composed transition | T | 71-74 | `0E` | thinning of the canon over a drum build; the piano's A, common to H1 and H2, held across into D |
 | Mix automation tied to the form | all | 1-124 | every section head | the mix-state table below |
 
-The canon uses upward chain transposes only, so open question 22 (downward TSP) does not arise. The interval and rhythm tables for its first two bars go on the plan, as in week 8.
+The canon uses upward chain transposes only, so open question 22 (downward TSP) does not arise. Its three voices play three instruments, and the I column belongs to the phrase, so the mallet's and bell's chains are deep clones with the instrument changed (week 8): make them last, once the subject is settled, since after that the voices no longer follow each other's edits. The interval and rhythm tables for its first two bars go on the plan, as in week 8.
 
 **Mix state and reset row.** Three values move, plus the hats' groove. The numbers stand in for values you capture with [EDIT] (week 11); they show only direction.
 
@@ -248,7 +248,7 @@ The canon uses upward chain transposes only, so open question 22 (downward TSP) 
 
 ```phrase
 # PHRASE 10  (track 1, first phrase of chain 10: reset row and A's head)
-0  D-3 70 01  VRE 30   VDE 00   .        ; global values on the first track that sounds
+0  D-3 70 00  VRE 30   VDE 00   .        ; global values on the first track that sounds
 ```
 
 Tracks 5 and 7 rest at row `00`, so each gets a resting chain of its own, `50` and `70`, whose phrase holds `GRV 00` or `VT7 40` on row `0`; `FE` stays empty, since a command there would fire at every rest (week 11). Without the `GRV 00`, a second play would start with D's swing on the hats.
@@ -257,9 +257,9 @@ B's head shows the cycle and the head together:
 
 ```phrase
 # PHRASE 14  (track 1, first phrase of chain 14: B's head, 12-step cycle)
-0  D-3 70 01  VRE 18   VDE 00   .        ; B's mix state
-4  F-3 60 01  .        .        .
-8  A-3 60 01  .        .        .
+0  D-3 70 00  VRE 18   VDE 00   .        ; B's mix state
+4  F-3 60 00  .        .        .
+8  A-3 60 00  .        .        .
 B  .   .  .   HOP 00   .        .        ; 12 steps, if row B counts (bench test 2)
 ```
 

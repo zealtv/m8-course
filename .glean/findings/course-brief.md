@@ -34,16 +34,25 @@ When planning or writing any part of the M8 course: who it is for, what the lear
   syllabus, template and the finished modules. Commit by path and push after
   each. The Pages deploy stays deferred until the learner makes the
   repository public.
-- State on 2026-11-13, about 05:50: weeks 1-11 and the appendices written,
-  tied and pushed; week 12 (Opus) next, then the final review (Fable) and
-  the deferred deploy. Work paused there at about 88% of the 5-hour window. Word counts run over the
-  template's 5,000 guide in weeks 1-7 and 9 (5,300 to 7,000); weeks 8 and 10
-  sit near 5,100. Weeks 5-11 have had no second read beyond the writer's own
-  arithmetic check; weeks 7, 9 and 11 came from a delegated Opus session and the
-  orchestrating session did not read them.
+- State on 2026-11-13, about 10:10: all twelve weeks and the appendices
+  written, tied and pushed; the final review tied the same morning (its
+  result sits at the foot of the tied `final-review` stitch). Only
+  `deploy-pages` remains, waiting on the learner making the repository
+  public. On 2026-11-13 the learner asked that the deploy also give the
+  README a short introduction (what the course covers, prerequisites) with
+  the live-site link front and centre; the stitch carries that.
+- As of the 2026-11-13 review: nothing had been tried on a unit; section 10
+  of the notes held 28 open questions. Word counts run over the template's
+  5,000 guide in most weeks (week 12 about 7,000). Weeks 7, 9, 11 and 12
+  came from delegated Opus sessions; the review read all twelve.
+- Whole-course PDFs get made by printing `/reader/` from headless Chrome
+  (`--print-to-pdf --no-pdf-header-footer`) into `tmp/print/` (gitignored);
+  for A4, serve a copy of `_site` with `@page { size: A4; }` appended to
+  `assets/print.css`. A list item starting `[ ]` renders as a tick box.
 - Delegation that worked on 2026-11-13: a brief per stitch under
   `tmp/briefs/` (gitignored; `week-07.md` and `week-09.md` serve as
-  patterns), sent to a second Claude Code session, which claims, writes,
+  patterns), sent to a second Claude Code session (in a tmux pane:
+  `claude --model opus --effort high --permission-mode auto '<prompt>'`), which claims, writes,
   builds, ties, commits by path and pushes. An Opus week cost roughly 11-17%
   of a Pro 5-hour window, a Fable week written in a warm context about 8-10%.
 - Each module since week 5 appends the questions it raised to section 10 of
