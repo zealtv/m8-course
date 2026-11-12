@@ -187,3 +187,35 @@ blockquote:not(.callout) { border-left: 3px solid var(--rule); margin-left: 0; p
   .tracker__caption, .tracker__grid { padding-left: 0.75rem; padding-right: 0.75rem; }
   .pager a { flex-basis: 100%; }
 }
+
+/* Worksheets: blank forms laid out with borders (not backgrounds) so they
+   print the same with "print backgrounds" off. */
+.worksheet .prose > * { max-width: none; }
+.ws-fields { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 0 0 0.9rem; }
+.ws-field { display: flex; align-items: flex-end; gap: 0.4rem; flex: 1 1 9rem; font-size: 0.8125rem; color: var(--muted); }
+.ws-field i { flex: 1; min-height: 1.5em; border-bottom: 1px solid var(--fg); }
+.worksheet .prose h2 { font-size: 1rem; margin: 1rem 0 0.35rem; padding-top: 0.3rem; }
+.worksheet .prose table.ws-grid { display: table; width: 100%; max-width: none; table-layout: fixed; border-collapse: collapse; margin-bottom: 0.5rem; font-size: 0.8125rem; }
+.ws-grid th, .ws-grid td { border: 1px solid var(--fg); padding: 0 0.3rem; height: 1.9rem; text-align: center; vertical-align: middle; }
+.ws-grid thead th { border-bottom: 2px solid var(--fg); background: none; font-weight: 600; }
+.ws-grid tbody tr, .ws-grid tbody tr:nth-child(even) { background: none; }
+.ws-grid td.lbl, .ws-grid th.lbl { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--muted); text-align: left; }
+.ws-grid .narrow { width: 3.4rem; }
+.ws-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.25rem; }
+.ws-pair > div { min-width: 0; }
+.ws-algo { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; margin: 0.2rem 0 0.5rem; font-size: 0.8125rem; }
+.ws-algo b { font-weight: 600; margin-right: 0.3rem; }
+.ws-algo span { min-width: 2.1rem; padding: 0.1rem 0; text-align: center; border: 1px solid var(--fg); border-radius: 50%; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.ws-lines div { height: 1.9rem; border-bottom: 1px solid var(--fg); }
+.ws-lines div:first-child { border-top: 0; }
+.ws-label { margin: 0.6rem 0 0; font-size: 0.8125rem; color: var(--muted); }
+.ws-boxes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.4rem; margin-bottom: 0.5rem; }
+.ws-boxes div { border: 1px solid var(--fg); min-height: 5.5rem; padding: 0.2rem 0.35rem; font-size: 0.75rem; color: var(--muted); }
+.ws-graph { display: block; width: 100%; height: auto; color: var(--fg); }
+.ws-graph text { fill: currentColor; stroke: none; font: 9px system-ui, sans-serif; }
+.ws-graph .grid { stroke: var(--rule); stroke-width: 0.5; }
+.ws-graph .frame { stroke: currentColor; stroke-width: 1; fill: none; }
+.ws-tick { display: inline-block; width: 1.1rem; height: 1.1rem; border: 1px solid var(--fg); vertical-align: middle; }
+.ws-lines div { font-size: 0.75rem; color: var(--muted); padding-top: 0.3rem; }
+.ws-grid--tight th, .ws-grid--tight td { height: 1.55rem; }
+.ws-grid td.txt { text-align: left; color: var(--fg); font-weight: 600; }

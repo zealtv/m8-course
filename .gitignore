@@ -5,3 +5,4 @@
 *.pdf
 node_modules/
 _site/
+tmp/

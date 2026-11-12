@@ -1,0 +1,39 @@
+---
+title: "Worksheet: chain and song plan"
+order: 12
+worksheet: true
+---
+<div class="ws-fields">
+  <span class="ws-field">Project<i></i></span>
+  <span class="ws-field">Tempo<i></i></span>
+  <span class="ws-field">Date<i></i></span>
+</div>
+<div class="ws-block">
+<h2>Chains</h2>
+<div class="ws-pair">
+{%- for n in range(0, 2) %}
+  <div>
+    <div class="ws-fields"><span class="ws-field">Chain<i></i></span></div>
+    <table class="ws-grid ws-grid--tight">
+      <thead><tr><th class="lbl narrow">Row</th><th>Phrase</th><th>TSP</th><th style="width:36%">Note</th></tr></thead>
+      <tbody>
+        {%- for i in range(0, 16) %}
+        <tr><td class="lbl">{{ i | hex }}</td><td></td><td></td><td></td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+{%- endfor %}
+</div>
+</div>
+<div class="ws-block">
+<h2>Song</h2>
+<table class="ws-grid ws-grid--tight">
+  <thead><tr><th class="lbl narrow">Row</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th style="width:20%">Section, bars</th></tr></thead>
+  <tbody>
+    {%- for i in range(0, 12) %}
+    <tr><td class="lbl">{{ i | hex(2) }}</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    {%- endfor %}
+  </tbody>
+</table>
+</div>

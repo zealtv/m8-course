@@ -1,0 +1,53 @@
+---
+title: "Worksheet: instrument patch sheet"
+order: 10
+worksheet: true
+---
+<div class="ws-fields">
+  <span class="ws-field">Instrument no.<i></i></span>
+  <span class="ws-field">Type<i></i></span>
+  <span class="ws-field">Name<i></i></span>
+  <span class="ws-field">Project<i></i></span>
+  <span class="ws-field">Date<i></i></span>
+  <span class="ws-field">Firmware<i></i></span>
+</div>
+<div class="ws-block">
+<h2>General settings, filter, amp and mixer</h2>
+<table class="ws-grid">
+  <thead><tr><th class="lbl">Setting</th><th>Value</th><th class="lbl">Setting</th><th>Value</th><th class="lbl">Setting</th><th>Value</th></tr></thead>
+  <tbody>
+    <tr><td class="lbl">TRANSP.</td><td></td><td class="lbl">FILTER</td><td></td><td class="lbl">DRY</td><td></td></tr>
+    <tr><td class="lbl">TABLE TIC</td><td></td><td class="lbl">CUTOFF</td><td></td><td class="lbl">MFX</td><td></td></tr>
+    <tr><td class="lbl">EQ</td><td></td><td class="lbl">RES</td><td></td><td class="lbl">DEL</td><td></td></tr>
+    <tr><td class="lbl">AMP</td><td></td><td class="lbl"></td><td></td><td class="lbl">REV</td><td></td></tr>
+    <tr><td class="lbl">LIM</td><td></td><td class="lbl"></td><td></td><td class="lbl"></td><td></td></tr>
+  </tbody>
+</table>
+</div>
+<div class="ws-block">
+<h2>FM Synth: algorithm and operators</h2>
+<p class="ws-algo"><b>ALGO</b> {% for i in range(0, 12) %}<span>{{ i | hex(2) }}</span>{% endfor %}</p>
+<table class="ws-grid">
+  <thead><tr><th class="lbl"></th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+  <tbody>
+    {%- for row in ["SHAPE", "RATIO", "LEV", "FB", "MOD slot 1", "MOD slot 2"] %}
+    <tr><td class="lbl">{{ row }}</td><td></td><td></td><td></td><td></td></tr>
+    {%- endfor %}
+  </tbody>
+</table>
+</div>
+<div class="ws-block">
+<h2>Instrument modulation</h2>
+<table class="ws-grid">
+  <thead><tr><th class="lbl narrow">Slot</th><th>Type</th><th>Destination</th><th>Settings</th></tr></thead>
+  <tbody>
+    {%- for i in range(1, 5) %}
+    <tr><td class="lbl">{{ i }}</td><td></td><td></td><td></td></tr>
+    {%- endfor %}
+  </tbody>
+</table>
+</div>
+<div class="ws-block">
+<h2>Target sound and the reason for each choice</h2>
+<div class="ws-lines"><div></div><div></div><div></div></div>
+</div>

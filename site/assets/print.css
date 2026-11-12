@@ -1,0 +1,108 @@
+/* Print stylesheet, linked with media="print". Black on white, no chrome,
+   safe on A4 and Letter. Page size is left to the printer dialog. */
+
+@page {
+  margin: 15mm 15mm 17mm;
+  /* Margin boxes: honoured by current Chromium; ignored elsewhere. A
+     different running title per module cannot be done in pure CSS. */
+  @top-left { content: "Composing with the M8"; font: 8pt system-ui, sans-serif; color: #444; }
+  @bottom-center { content: counter(page); font: 8pt system-ui, sans-serif; color: #444; }
+}
+
+* { -webkit-print-color-adjust: economy; print-color-adjust: economy; }
+
+:root {
+  --bg: #fff; --fg: #000; --muted: #333; --rule: #777; --panel: #fff;
+  --link: #000; --accent: #000; --dim: #555; --mono-fg: #000;
+}
+
+html { font-size: 10.5pt; }
+body { background: #fff; color: #000; font-size: 1rem; line-height: 1.45; }
+
+/* Chrome that has no use on paper */
+.skip, .site-header, .sidebar, .pager, .screen-only,
+.module .toc, .appendix .toc { display: none !important; }
+
+/* Linear page: no grid, no measure */
+.wrap { max-width: none; padding: 0; }
+.layout, .layout.has-sidebar { display: block; padding-top: 0; }
+main, article > *, .prose > * { max-width: none; }
+
+/* Links: ink only; show the address after external links */
+a { color: #000; text-decoration: underline; }
+a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; overflow-wrap: anywhere; word-break: break-all; }
+
+/* Headings */
+h1 { font-size: 20pt; margin-bottom: 0.4rem; }
+h2 { font-size: 14pt; border-top: 0.5pt solid #000; margin-top: 1.4rem; }
+h3 { font-size: 12pt; margin-top: 1.1rem; }
+h1, h2, h3, h4 { break-after: avoid; break-inside: avoid; }
+p { orphans: 3; widows: 3; }
+.kicker { color: #333; }
+
+/* Keep things whole */
+.tracker, .callout, table, figure, blockquote, .fmalgo, .module-head, .ws-block { break-inside: avoid; }
+tr, th, td { break-inside: avoid; }
+thead { display: table-header-group; }
+h2 + p, h3 + p, h4 + p, h2 + .tracker, h3 + .tracker { break-before: avoid; }
+
+/* Tables: no scrolling on paper */
+.prose table { display: table; width: 100%; max-width: none; overflow: visible; font-size: 9.5pt; }
+th, td { border-bottom: 0.5pt solid #555; }
+thead th { border-bottom: 1pt solid #000; }
+tbody tr:nth-child(even) { background: none; }
+
+/* Tracker grids never clip: smaller type, wrap as a last resort */
+.tracker { border: 0.5pt solid #000; background: none; }
+.tracker__caption { color: #000; }
+.tracker__grid { overflow: visible; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 8.5pt; line-height: 1.4; background: none; }
+.tracker__row, .tracker__label, .tracker__head { color: #000; }
+.tracker__empty { color: #555; }
+.tracker__comment { color: #222; }
+pre { overflow: visible; white-space: pre-wrap; border: 0.5pt solid #555; background: none; font-size: 8.5pt; }
+
+/* Callouts: no colour, so the label and the rule style carry the type */
+.callout { background: none; border: 0.5pt solid #000; border-left: 3pt solid #000; }
+.callout > p:first-child > strong:first-child { color: #000; }
+.callout--bench-test { border-left-style: dashed; }
+.callout--headless { border-left-style: dotted; }
+.callout--manual { border-left-style: double; border-left-width: 4pt; }
+.callout--draft { border-style: dashed; }
+kbd.key { border: 0.5pt solid #000; background: none; }
+
+/* FM diagrams are currentColor: black on paper */
+.fmalgo { color: #000; max-width: 14rem; }
+.fmalgo figcaption { color: #000; }
+
+/* Footer: keep the unofficial notice, small */
+.site-footer { margin-top: 1.5rem; border-top: 0.5pt solid #555; color: #333; font-size: 8pt; }
+.site-footer .wrap { padding: 0.4rem 0 0; }
+
+/* Whole-course reader: title and contents on the first page, then one part per page */
+.reader > h1 { font-size: 26pt; margin-top: 3rem; }
+.reader > .toc { display: block; background: none; border: 0; padding: 0; font-size: 11pt; break-after: page; }
+.reader > .toc h2 { border: 0; font-size: 14pt; color: #000; text-transform: none; letter-spacing: 0; margin-top: 2rem; }
+.reader > .toc ol { padding-left: 1.5rem; }
+.reader-part { margin-top: 0; break-before: page; }
+.reader-part .part-title { border-top: 0; margin-top: 0; font-size: 18pt; }
+
+/* Worksheets: one printed page each. Rules are borders, not backgrounds,
+   so they survive "print backgrounds" being off. */
+.worksheet .kicker { margin-bottom: 0; }
+.worksheet h1 { font-size: 16pt; margin-bottom: 0.2rem; }
+
+/* Worksheet sizing: compact enough for one page on A4 or Letter */
+.worksheet { break-inside: avoid; }
+.worksheet .prose h2 { font-size: 10.5pt; margin: 0.7rem 0 0.25rem; border-top: 0; padding-top: 0; }
+.worksheet .prose table.ws-grid { font-size: 8.5pt; margin-bottom: 0.3rem; }
+.ws-grid th, .ws-grid td { border: 0.5pt solid #000; height: 7mm; }
+.ws-grid .narrow { width: 12mm; }
+.ws-grid thead th { border-bottom: 1pt solid #000; }
+.ws-field, .ws-label, .ws-algo { color: #000; font-size: 8.5pt; }
+.ws-field i, .ws-lines div { border-bottom: 0.5pt solid #000; }
+.ws-lines div { height: 7mm; }
+.ws-boxes div { border: 0.5pt solid #000; color: #000; min-height: 20mm; font-size: 8pt; }
+.ws-algo span { border: 0.5pt solid #000; }
+.ws-graph { color: #000; }
+.ws-graph .grid { stroke: #888; }
+.ws-grid--tight th, .ws-grid--tight td { height: 5.6mm; }

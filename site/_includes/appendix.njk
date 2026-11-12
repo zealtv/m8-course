@@ -3,7 +3,7 @@ layout: base.njk
 ---
 {%- set prev = collections.appendices | getPreviousCollectionItem(page) -%}
 {%- set next = collections.appendices | getNextCollectionItem(page) -%}
-<article class="appendix">
+<article class="appendix{% if worksheet %} worksheet{% endif %}">
   <p class="kicker">Appendix</p>
   <h1>{{ title }}</h1>
   {% set contents = content | toc %}

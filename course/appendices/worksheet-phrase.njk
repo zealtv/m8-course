@@ -1,0 +1,29 @@
+---
+title: "Worksheet: phrase grid"
+order: 11
+worksheet: true
+---
+<div class="ws-fields">
+  <span class="ws-field">Phrase no.<i></i></span>
+  <span class="ws-field">Track<i></i></span>
+  <span class="ws-field">Instrument<i></i></span>
+  <span class="ws-field">Project<i></i></span>
+  <span class="ws-field">Date<i></i></span>
+</div>
+<table class="ws-grid">
+  <thead><tr><th class="lbl narrow">Row</th><th>N</th><th>V</th><th>I</th><th>FX1</th><th>FX2</th><th>FX3</th><th style="width:28%">Why</th></tr></thead>
+  <tbody>
+    {%- for i in range(0, 16) %}
+    <tr><td class="lbl">{{ i | hex }}</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    {%- endfor %}
+  </tbody>
+</table>
+<div class="ws-block">
+<div class="ws-fields">
+  <span class="ws-field">Groove used<i></i></span>
+  <span class="ws-field">Ticks per step<i></i></span>
+  <span class="ws-field">Sum and working<i></i></span>
+</div>
+<h2>Intent</h2>
+<div class="ws-lines"><div></div><div></div></div>
+</div>

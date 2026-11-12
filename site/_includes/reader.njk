@@ -3,7 +3,8 @@ layout: base.njk
 ---
 <article class="reader">
   <h1>{{ title }}</h1>
-  <p class="lede">The syllabus, all twelve weeks and the appendices on one page, in course order. Use your browser's print command for a paper copy.</p>
+  <p class="lede">The syllabus, all twelve weeks and the appendices on one page, in course order.</p>
+  <p class="screen-only">Use your browser's print command for a paper copy. It lays out for A4 or Letter; each part starts on a new page.</p>
   <nav class="toc" aria-label="Whole course">
     <h2>Contents</h2>
     <ol>
@@ -30,7 +31,7 @@ layout: base.njk
   </section>
   {% endfor %}
   {% for a in collections.appendices %}
-  <section class="reader-part" id="{{ a.fileSlug }}">
+  <section class="reader-part{% if a.data.worksheet %} reader-part--worksheet{% endif %}" id="{{ a.fileSlug }}">
     <p class="kicker">Appendix</p>
     <h2 class="part-title">{{ a.data.title }}</h2>
     <div class="prose">{{ a.templateContent | forReader(a.fileSlug) | safe }}</div>

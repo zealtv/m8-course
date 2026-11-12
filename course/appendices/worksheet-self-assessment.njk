@@ -1,0 +1,41 @@
+---
+title: "Worksheet: self-assessment rubric"
+order: 14
+worksheet: true
+---
+<div class="ws-fields">
+  <span class="ws-field">Week<i></i></span>
+  <span class="ws-field">Etude<i></i></span>
+  <span class="ws-field">Date rendered<i></i></span>
+  <span class="ws-field">Date reviewed<i></i></span>
+</div>
+<div class="ws-fields">
+  <span class="ws-field">Duration: target<i></i></span>
+  <span class="ws-field">Duration: achieved<i></i></span>
+  <span class="ws-field">Repeat budget<i></i></span>
+  <span class="ws-field">Longest unchanged repeat<i></i></span>
+</div>
+<div class="ws-block">
+<h2>Score each criterion from 1 to 4</h2>
+<table class="ws-grid">
+  <thead><tr><th class="lbl" style="width:24%">Criterion</th><th class="narrow">1</th><th class="narrow">2</th><th class="narrow">3</th><th class="narrow">4</th><th>Evidence: bar, section, what you heard</th></tr></thead>
+  <tbody>
+    {%- for c in ["Plan and realisation", "Technique of the week", "Development", "Sound"] %}
+    <tr style="height:15mm"><td class="txt" style="height:15mm">{{ c }}</td><td><span class="ws-tick"></span></td><td><span class="ws-tick"></span></td><td><span class="ws-tick"></span></td><td><span class="ws-tick"></span></td><td></td></tr>
+    {%- endfor %}
+  </tbody>
+</table>
+<p class="ws-label">A checkpoint scoring below 3 on any criterion suggests repeating that week's etude before moving on.</p>
+</div>
+<div class="ws-block">
+<h2>Listening review: render, wait until the next day, listen once without stopping</h2>
+<div class="ws-lines"><div>What held your attention?</div><div>Where did it sag?</div><div>What did you not expect?</div><div>What would you cut or change first?</div></div>
+</div>
+<div class="ws-block">
+<h2>Where the piece departs from its plan, and why</h2>
+<div class="ws-lines"><div></div><div></div></div>
+</div>
+<div class="ws-block">
+<h2>One change for the next etude</h2>
+<div class="ws-lines"><div></div><div></div></div>
+</div>

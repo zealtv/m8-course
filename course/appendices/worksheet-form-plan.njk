@@ -1,0 +1,55 @@
+---
+title: "Worksheet: one-page form plan"
+order: 13
+worksheet: true
+---
+{%- macro graph(label, high, low) %}
+<svg class="ws-graph" viewBox="0 0 300 110" role="img" aria-label="Empty graph for the {{ label }} curve across the whole duration; bars along the bottom.">
+  <rect class="frame" x="34" y="4" width="262" height="88"/>
+  {%- for i in range(1, 8) %}
+  <line class="grid" x1="{{ 34 + i * 32.75 }}" y1="4" x2="{{ 34 + i * 32.75 }}" y2="92"/>
+  {%- endfor %}
+  <line class="grid" x1="34" y1="26" x2="296" y2="26"/>
+  <line class="grid" x1="34" y1="48" x2="296" y2="48"/>
+  <line class="grid" x1="34" y1="70" x2="296" y2="70"/>
+  <text x="31" y="12" text-anchor="end">{{ high }}</text>
+  <text x="31" y="92" text-anchor="end">{{ low }}</text>
+  <text x="34" y="104">bar 1</text>
+  <text x="296" y="104" text-anchor="end">last bar</text>
+</svg>
+{%- endmacro -%}
+<div class="ws-fields">
+  <span class="ws-field">Working title<i></i></span>
+  <span class="ws-field">Tempo<i></i></span>
+  <span class="ws-field">Duration target<i></i></span>
+  <span class="ws-field">Repeat budget<i></i></span>
+  <span class="ws-field">Date<i></i></span>
+</div>
+<div class="ws-block">
+<h2>Inventory</h2>
+<div class="ws-boxes">
+  <div>Motifs</div><div>Grooves</div><div>Instruments</div><div>Harmonic areas</div><div>Textures</div>
+</div>
+</div>
+<div class="ws-block">
+<h2>Sections</h2>
+<table class="ws-grid">
+  <thead><tr><th class="lbl narrow">Sect.</th><th style="width:15%">Bars (from to, count)</th><th>What happens</th><th>What changes from the last section (name the dimensions)</th><th style="width:16%">Return, and how it differs</th></tr></thead>
+  <tbody>
+    {%- for i in range(0, 6) %}
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    {%- endfor %}
+  </tbody>
+</table>
+</div>
+<div class="ws-block">
+<h2>Density and register across the whole duration</h2>
+<div class="ws-pair">
+  <div><p class="ws-label">Density</p>{{ graph("density", "full", "empty") }}</div>
+  <div><p class="ws-label">Register</p>{{ graph("register", "high", "low") }}</div>
+</div>
+</div>
+<div class="ws-block">
+<h2>Boundaries: one sentence each, saying what changes there</h2>
+<div class="ws-lines"><div></div><div></div><div></div><div></div><div></div></div>
+</div>

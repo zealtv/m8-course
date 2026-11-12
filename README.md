@@ -43,6 +43,27 @@ and is public.
 The workflow uploads the built `_site/` as an artifact rather than serving a
 branch, so GitHub's Jekyll step never runs and no `.nojekyll` file is needed.
 
+## Printing
+
+The site links `site/assets/print.css` for print only. Use the browser's print
+command on any page. `/reader/` holds the syllabus, every week and every
+appendix in one document: a title and contents page, then each part on a new
+page. Each blank worksheet under the appendices fits one A4 or Letter page.
+Black on white, no navigation, and external link addresses appear after the
+link text. Tracker blocks shrink and wrap rather than scroll, and are kept
+whole across page breaks.
+
+To make a PDF without a dialog (Chrome shown; write into the ignored `tmp/`):
+
+```sh
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+  --no-pdf-header-footer --print-to-pdf=tmp/reader.pdf http://localhost:8080/reader/
+```
+
+Running titles and page numbers use CSS page margin boxes, which current
+Chromium honours; other browsers print without them. The reader's contents list
+carries no page numbers, because no browser checked supports the CSS needed.
+
 ## Layout of the repository
 
 | Path | Holds |
@@ -50,7 +71,7 @@ branch, so GitHub's Jekyll step never runs and no `.nojekyll` file is needed.
 | `course/` | Content. `index.md` is the home page, `syllabus.md` the syllabus, `week-NN-slug.md` one file per week, `appendices/` the appendices, `reader.njk` the whole-course page. |
 | `site/_includes/` | Layouts: `home`, `module`, `appendix`, `reader`, plus `base` and `page`. |
 | `site/_data/site.js` | Site title and description. It has no author or contact fields, by design. |
-| `site/assets/` | `style.css`, copied to `_site/assets/`. |
+| `site/assets/` | `style.css` and `print.css`, copied to `_site/assets/`. |
 | `eleventy.config.js` | Collections, the contents filter and the path prefix. |
 | `docs/` | The plan: manual notes, syllabus, module template. Not published. |
 
@@ -61,7 +82,8 @@ branch, so GitHub's Jekyll step never runs and no `.nojekyll` file is needed.
   `/weeks/week-NN-slug/` automatically, and appears in the week list, the
   previous/next links, the home page, the syllabus table and the reader.
 - An appendix goes in `course/appendices/`. Optional `order` in its front
-  matter sorts the list.
+  matter sorts the list. The five blank worksheets there are plain HTML in
+  `.njk` files with `worksheet: true`; they use the `hex` filter for row labels.
 - `##` and `###` headings receive ids and feed the in-page contents.
 - Markdown files pass through Nunjucks, so write `{% raw %}{{ ... }}{% endraw %}`
   around any literal double braces.

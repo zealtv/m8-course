@@ -53,10 +53,13 @@ export default function (eleventyConfig) {
   );
   eleventyConfig.addCollection("appendices", (api) =>
     api
-      .getFilteredByGlob("course/appendices/*.md")
+      .getFilteredByGlob("course/appendices/*")
       .filter((p) => p.filePathStem !== "/appendices/index")
       .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99) || a.data.title.localeCompare(b.data.title)),
   );
+
+  // Hexadecimal row labels for worksheets: {{ 10 | hex(2) }} gives "0A".
+  eleventyConfig.addFilter("hex", (value, pad = 1) => Number(value).toString(16).toUpperCase().padStart(pad, "0"));
 
   // Contents list for a page: an <ol> of h2 headings, each with an inner <ol>
   // of its h3 headings. Only headings that carry an id are listed.
