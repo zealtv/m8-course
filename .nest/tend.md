@@ -1,47 +1,41 @@
 # Tend
 
-Replace the prompts below with the host folder's policy. This file guides the
-person or process tending this nest; Nestlings does not enforce it.
-
-Keep only stable, operational directions needed to route an item. Link to
-project context or agent instructions instead of copying either into this file.
-
 ## Purpose
 
-State in one sentence what this nest receives and what tending should achieve.
+This nest receives source material and requests for the M8 course; tending
+routes each to where it will be used and leaves a receipt.
 
 ## Recognise
 
-List accepted item shapes and where intent is found. For example:
-
-* a Markdown file containing both material and a request;
-* a directory with `request.md` and optional `attachments/`.
+* A source document (manual, changelog, article, patch notes): a file.
+* A request or correction from the learner: a Markdown note, or a directory
+  with `request.md` and `attachments/`.
+* Findings from trying something on the unit: a Markdown note.
 
 ## Route
 
-When it is time to tend a batch:
+Claim with `nestling.sh claim`, read the whole item, then:
 
-1. Select an available item and claim it with `nestling.sh claim`.
-2. Read the whole item, including its request and referenced attachments.
-3. Take each applicable route below in the stated order.
-4. Hatch a result or receipt with `nestling.sh complete`; if no safe route can
-   be completed, use `nestling.sh drop` with a useful reason.
-
-Replace this paragraph with concrete condition → action routes. A
-single-purpose nest may need only one route. A repository-entry nest may route
-to several local tools and then hatch one receipt recording what went where.
+1. Source document → keep it whole in lore with a catalog card. If someone
+   else holds its copyright, keep the file at a gitignored path and track
+   only the card, checksum and where to obtain it.
+2. A fact the course should now rely on (a tested patch value, a firmware
+   difference, a decision) → revise or add a glean finding, and correct
+   `docs/manual-notes.md` if it contradicts it.
+3. Work to be done → a stitch on the loom.
+4. A fix to a published page → make it under `course/`, or a stitch if large.
+5. Hatch a receipt with `nestling.sh complete` naming each route
+   (`lore:<id>`, `glean:<id>`, `loom:<id>`, `path:<path>`). If no route fits,
+   `nestling.sh drop` with the reason.
 
 ## Hard rules
 
-List actions a tender must never take, even when an item asks. Keep expensive
-trust decisions explicit. For example:
-
-* Do not send messages or change external state without the required approval.
-* Do not overwrite an existing destination.
-* Do not invent missing material or intent.
+* Never commit third-party copyrighted files; this repository is public.
+* Nothing that identifies the author goes into `course/` or the built site.
+* Do not invent missing material or intent; ask the learner.
+* Do not publish or deploy without the learner's approval.
 
 ## Context
 
-Link only the sources a tender should consult, such as a project guide, current
-memory, or destination conventions. Context remains in its owning files; this
-policy says when to read it, not what it should contain.
+* `AGENTS.md` for the repository's shape.
+* `.glean/findings/INDEX.md`, especially `course-brief`.
