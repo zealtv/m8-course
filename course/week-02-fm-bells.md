@@ -94,8 +94,8 @@ positions need the ear.
 The manual does not say whether the engine modulates frequency or phase. The
 sidebands fall in the same places either way, so the arithmetic stands.
 
-> **Try it.** On a fresh FM Synth, choose algorithm `00` and set C's LEV to
-> `00`, so that only C modulates D. Leave D at RATIO 1.00. Step C's RATIO
+> **Try it.** On a fresh FM Synth, choose algorithm `00` and set B's LEV to
+> `00`. B then passes nothing on to C, so C alone modulates D. Leave D at RATIO 1.00. Step C's RATIO
 > through 1.00, 2.00 and 3.00 at a moderate LEV and match what you hear to the
 > three series above. Preview with [EDIT]+[PLAY].
 

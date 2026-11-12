@@ -513,3 +513,6 @@ short test on a unit; record the answer here with the date and firmware.
     absence on the learner's unit.
 12. **Chain TSP inside a scale**: confirm it moves by scale degree, as p. 28
     implies, and what happens to notes outside the scale.
+13. **Deep clone and repeated phrases.** If a chain lists the same phrase
+    several times, does a deep clone make one new phrase or one per row?
+    (Raised while writing week 1, 2026-11-12.)
