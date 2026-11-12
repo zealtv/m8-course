@@ -57,8 +57,13 @@ At the default 24 ticks per quarter note:
 | Sixteenth-note triplet | 4 | `04` | ⅔ |
 | Thirty-second | 3 | `03` | ½ |
 
-These values serve `DEL`, `KIL`, `OFF`, `RET`, groove rows, `TABLE TIC` and
-the AHD envelope times, all of which count ticks and so follow the tempo.
+These values serve `DEL`, `KIL`, `OFF`, `RET`, groove rows and the AHD
+envelope times, all of which count ticks and so follow the tempo.
+
+`TABLE TIC` and the `TIC` command also count in ticks (p. 24), but the manual
+says that tables, unlike phrases, do not follow tempo and groove (p. 24). So
+whether a table row at `TIC 06` lasts as long as a 16th note at your tempo
+stays open: check this on your unit before you rely on it.
 
 ## Tempo and time
 
@@ -73,7 +78,7 @@ One quarter note lasts 60 / BPM seconds, so:
 |-----|-----------|-----------|--------------|---------|-----------------|
 | 60 | 41.7 | 250 | 1000 | 4.00 | 15.0 |
 | 70 | 35.7 | 214 | 857 | 3.43 | 17.5 |
-| 80 | 31.2 | 188 | 750 | 3.00 | 20.0 |
+| 80 | 31.3 | 188 | 750 | 3.00 | 20.0 |
 | 90 | 27.8 | 167 | 667 | 2.67 | 22.5 |
 | 100 | 25.0 | 150 | 600 | 2.40 | 25.0 |
 | 110 | 22.7 | 136 | 545 | 2.18 | 27.5 |
