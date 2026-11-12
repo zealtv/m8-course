@@ -553,3 +553,7 @@ short test on a unit; record the answer here with the date and firmware.
     next; whether a command in another FX column, or an instrument
     retrigger, ends it; where RTO must sit (beside REP, or on a later row).
     (Raised while writing week 7, 2026-11-13.)
+22. **Pan, and downward chain transpose.** Whether an instrument or track
+    has a pan or width control (these notes record only DRY and the three
+    sends), and how a chain TSP below zero is entered and displayed.
+    (Raised while writing week 8, 2026-11-13.)
