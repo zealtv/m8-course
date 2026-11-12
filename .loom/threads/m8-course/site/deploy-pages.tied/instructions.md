@@ -41,3 +41,13 @@ When deploying, give `README.md` a short introduction: what the course
 covers, the knowledge it assumes, that sort of thing. Put a link to the live
 site front and centre, at the top. The README sits in the public repository,
 so the anonymity rule for published pages applies to its text.
+
+## Deployed, 2026-11-13
+
+The learner made the repository public and asked for the deploy on
+2026-11-13. Pages enabled with the "GitHub Actions" source; push trigger
+restored; README given its introduction with the live link at the top. Run
+43327078664 built and deployed. Checked that day: the home page, a module,
+the reader, a worksheet and both stylesheets returned 200 at
+<https://zealtv.github.io/m8-course/>, and the live reader printed to a PDF
+of the same length as the local Letter one.
