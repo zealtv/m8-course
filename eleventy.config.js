@@ -7,6 +7,9 @@
 // (see README.md). Every internal link goes through the `url` filter, which
 // applies it.
 
+import markdownComponents from "./site/lib/markdown-components.js";
+import fmalgo from "./site/lib/fmalgo.js";
+
 const rawPrefix = process.env.PATH_PREFIX || "/";
 const pathPrefix = "/" + rawPrefix.replace(/^\/+|\/+$/g, "") + (/^\/*$/.test(rawPrefix) ? "" : "/");
 
@@ -34,6 +37,15 @@ export default function (eleventyConfig) {
       }
     });
   });
+
+  // Pages with `draft: true` appear under `npm run serve` but not in a build.
+  eleventyConfig.addPreprocessor("drafts", "*", (data) => {
+    if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") return false;
+  });
+
+  // Tracker figures, callouts and key notation (see site/lib/markdown-components.js).
+  eleventyConfig.amendLibrary("md", markdownComponents);
+  eleventyConfig.addShortcode("fmalgo", fmalgo);
 
   // Weeks in course order; appendices by `order`, then title.
   eleventyConfig.addCollection("weeks", (api) =>

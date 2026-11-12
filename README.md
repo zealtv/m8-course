@@ -65,4 +65,13 @@ branch, so GitHub's Jekyll step never runs and no `.nojekyll` file is needed.
 - `##` and `###` headings receive ids and feed the in-page contents.
 - Markdown files pass through Nunjucks, so write `{% raw %}{{ ... }}{% endraw %}`
   around any literal double braces.
+- Tracker data goes in fences tagged `phrase`, `chain`, `song`, `table`,
+  `groove`, `patch` or `cycles`; callouts are blockquotes that open with a bold
+  label (**Try it.**, **Bench test.**, **Headless.**, **Starting point.**,
+  **Manual.**, **Draft.**); keys written as `[SHIFT]` become keycaps. The
+  conventions are in `docs/module-template.md`; the code is in
+  `site/lib/markdown-components.js`. `{% fmalgo "07" %}` draws FM algorithm 07.
+- `course/appendices/components.md` shows every component. It has
+  `draft: true`, so it appears under `npm run serve` and stays out of
+  `npm run build`.
 - British spelling. Name no author anywhere, in front matter or prose.
