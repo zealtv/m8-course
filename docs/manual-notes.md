@@ -574,3 +574,9 @@ short test on a unit; record the answer here with the date and firmware.
     from equal temperament or sets its pitch outright, and whether it
     retunes notes entered in the note column or only values the scale
     quantises (TSP, ARP, PIT). (Raised while writing week 9, 2026-11-13.)
+26. **Song view practice.** What a song snapshot stores and restores; what
+    LIVE QUANTIZE offers and how a cued row behaves when its tracks hold
+    chains of different lengths; whether REP will ramp TPO; whether a render
+    runs past the last song row to let effect tails decay; whether HOP FF
+    on every track stops the song. (Raised while writing week 10,
+    2026-11-13.)
