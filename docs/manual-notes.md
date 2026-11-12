@@ -531,3 +531,25 @@ short test on a unit; record the answer here with the date and firmware.
     chain. Whether RMX sounds the note on its target row. Whether the
     [OPTION] time display in song view accounts for phrases shortened by
     HOP or a groove. (Raised while writing week 6, 2026-11-13.)
+18. **Row shift at the phrase edge.** When [EDIT]+[UP or DOWN] in selection
+    mode (p. 15) moves rows past row F (or above row 0), do they wrap to the
+    other end, drop off, or does the shift refuse? Decides whether
+    displacement by shifting keeps the note that crosses the bar line.
+    (Raised while writing week 7, 2026-11-13.)
+19. **What NTH counts.** Plays of the phrase since [PLAY], consecutive
+    repeats within a chain, or passes of the chain; whether the count
+    belongs to the track or the phrase; whether it resets when the track
+    moves to a new chain or song row; whether the first pass counts as 0
+    or 1. Decides the period of any NTH variation. (Raised while writing
+    week 7, 2026-11-13.)
+20. **SED, CHA and RND.** Which random commands SED governs (RND and RNL
+    certainly; CHA?); whether meeting a SED again restarts the sequence, so
+    a SED on row 0 repeats its results every pass; whether the sequence runs
+    on across phrases. Whether CHA's digits scale linearly (x / 15). What
+    "previously active command" means for RND: the command to its left on
+    the row, or the last one on the track. (Raised while writing week 7,
+    2026-11-13.)
+21. **REP's timing and reach.** Whether REP acts on its own row or from the
+    next; whether a command in another FX column, or an instrument
+    retrigger, ends it; where RTO must sit (beside REP, or on a later row).
+    (Raised while writing week 7, 2026-11-13.)
