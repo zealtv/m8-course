@@ -7,3 +7,7 @@
 - No analytics, no external fonts or scripts, no trackers. Works with
   JavaScript off.
 - `npm run build` and `npm run serve` documented in the README.
+
+## Model
+
+Sonnet (suggested on 2026-11-12): routine site work.

@@ -21,3 +21,7 @@ must be something the notes show the instrument doing.
 
 Show the syllabus to the learner and get their agreement before the module
 stitches start.
+
+## Model
+
+Fable (suggested on 2026-11-12): later work builds on this, or its examples must be exactly right.

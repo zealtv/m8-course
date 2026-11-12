@@ -12,3 +12,7 @@ Written in our own words and laid out for print:
   plan, one-page form plan, self-assessment rubric.
 - Further reading and listening, described without linking to anything that
   identifies the author.
+
+## Model
+
+Opus (suggested on 2026-11-12): careful drafting to a fixed template from settled notes.

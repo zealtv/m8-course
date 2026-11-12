@@ -8,3 +8,7 @@
 - Print: produce the whole-course PDF and read it through.
 - Links, headings, alt text, phone width, dark theme.
 - Hand the learner the URL and the PDF.
+
+## Model
+
+Fable (suggested on 2026-11-12): later work builds on this, or its examples must be exactly right.

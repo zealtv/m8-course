@@ -5,3 +5,7 @@ Polymeter as shared pulse, different cycle length. Short phrases with HOP, chain
 Deliver `course/week-06-polymeter.md` to the module template: outcomes, reading, concepts,
 worked examples, lab, etude with form plan and duration target, rubric,
 extensions. Check every instrument claim against `docs/manual-notes.md`.
+
+## Model
+
+Fable (suggested on 2026-11-12): later work builds on this, or its examples must be exactly right.

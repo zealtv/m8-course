@@ -6,3 +6,7 @@
   table), instrument patch sheet, FM algorithm diagram (original SVG),
   exercise box, rubric table, key-press notation, callouts.
 - Each component follows the conventions in `docs/module-template.md`.
+
+## Model
+
+Sonnet (suggested on 2026-11-12): routine site work.

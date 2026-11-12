@@ -15,3 +15,7 @@ Write `docs/module-template.md` and one worked sample section.
   might differ, say so in a short, consistently styled note.
 - Honesty rule: mark any parameter value that has not been tried on a unit as
   a starting point to adjust by ear.
+
+## Model
+
+Fable (suggested on 2026-11-12): later work builds on this, or its examples must be exactly right.

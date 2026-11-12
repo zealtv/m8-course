@@ -35,3 +35,7 @@ April 2026, so the firmware runs ahead of the manual.
   rather than memory.
 - Read the manufacturer's changelog from 6.5.2 to 6.6.4 and note what
   changed or arrived after the manual, marked as coming from the changelog.
+
+## Model
+
+Fable (suggested on 2026-11-12): later work builds on this, or its examples must be exactly right.
