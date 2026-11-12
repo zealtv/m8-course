@@ -28,4 +28,4 @@ Fable (suggested on 2026-11-12): later work builds on this, or its examples must
 
 ## State
 
-`docs/syllabus.md` drafted on 2026-11-12. Waiting on the learner's agreement; resume, apply their changes, then tie.
+The learner agreed `docs/syllabus.md` on 2026-11-12, with duration targets raised and week 10 allowed to run to about 8 hours. Bar counts in the week stitches predate this; the syllabus overrides them.

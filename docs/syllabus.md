@@ -1,7 +1,8 @@
 # Syllabus
 
-Status: draft of 2026-11-12, awaiting the learner's agreement. Module writing
-starts after that.
+Status: the learner agreed this syllabus on 2026-11-12, asking for duration
+targets pushed a little and allowing week 10 to run heavy. Both changes appear
+below.
 
 Every instrument claim below rests on `docs/manual-notes.md`; section numbers
 in brackets, such as [N 2.1], point there. Items marked "bench test" resolve
@@ -79,13 +80,13 @@ One measurable rule keeps the method honest, the **repeat budget**: each
 etude states the largest number of times any phrase may sound unchanged in
 succession. The budget starts at 4 and falls to 2.
 
-Each etude carries a duration target. Targets rise each week so that length
-becomes ordinary before week 10 names the method outright.
+Each etude carries a duration target. Targets rise each week, from 24 bars in week 2 to 96 by week 8, so that
+length becomes ordinary before week 10 names the method outright.
 
 ## 4. Weekly schedule
 
 Time per week: reading 45 min, lab 1 h 45 min, etude 2 h, listening review
-30 min. "Bars" means bars of 4/4 at the piece's tempo unless a week says
+30 min. Week 10 runs heavy by agreement, at about 8 hours. "Bars" means bars of 4/4 at the piece's tempo unless a week says
 otherwise.
 
 ### Week 1: The M8 as a compositional system
@@ -118,8 +119,8 @@ otherwise.
   build a family: tubular bell, glockenspiel, vibraphone (with an LFO for the
   motor), and one deliberately inharmonic gong.
 - **Etude**: a piece for mallets and bells alone, three tracks at most.
-- **Duration target**: 16 bars, in two contrasted 8-bar sections with a
-  written join. **Repeat budget**: 4.
+- **Duration target**: 24 bars, in three contrasted 8-bar sections with
+  written joins. **Repeat budget**: 4.
 
 ### Week 3: FM II, electric pianos and basses
 
@@ -133,8 +134,8 @@ otherwise.
 - **Lab**: bench test 6 (operator shapes and FM commands). Two electric
   pianos and three basses, each saved with a short written rationale.
 - **Etude**: a duo for piano and bass with a composed bass line that has its
-  own contour and rhythm, in three sections.
-- **Duration target**: 24 bars. **Repeat budget**: 4.
+  own contour and rhythm, in four sections.
+- **Duration target**: 32 bars. **Repeat budget**: 4.
 
 ### Week 4: Drum synthesis
 
@@ -150,7 +151,7 @@ otherwise.
   of at least eight instruments, with two alternative kicks and snares.
 - **Checkpoint piece 1**: for the instruments of weeks 2-4 only. Four
   sections; the drums must change role at least twice.
-- **Duration target**: 32 bars. **Repeat budget**: 3.
+- **Duration target**: 48 bars. **Repeat budget**: 3.
 
 ### Week 5: Time, groove and polyrhythm
 
@@ -166,7 +167,7 @@ otherwise.
   septuplet, and one of the learner's design.
 - **Etude**: a piece in which at least three layers divide the bar
   differently, and the divisions change between sections.
-- **Duration target**: 40 bars. **Repeat budget**: 3.
+- **Duration target**: 56 bars. **Repeat budget**: 3.
 
 ### Week 6: Polymeter
 
@@ -182,7 +183,7 @@ otherwise.
   against the prediction.
 - **Etude**: a piece built on a planned realignment: the cycle lengths, the
   bar where the layers meet, and what happens there, all stated in the plan.
-- **Duration target**: 48 bars. **Repeat budget**: 3.
+- **Duration target**: 64 bars. **Repeat budget**: 3.
 
 ### Week 7: Variation
 
@@ -202,7 +203,7 @@ otherwise.
 - **Etude**: theme and variations on the baseline material. The plan orders
   the variations by a stated principle: rising density, growing distance
   from the theme, or another of the learner's choosing.
-- **Duration target**: 64 bars. **Repeat budget**: 2.
+- **Duration target**: 80 bars. **Repeat budget**: 2.
 
 ### Week 8: Counterpoint
 
@@ -219,7 +220,7 @@ otherwise.
 - **Checkpoint piece 2**: three pitched voices and one percussion voice. No
   voice may double another's rhythm for more than a bar. Uses at least one
   technique from weeks 5-7.
-- **Duration target**: 64 bars. **Repeat budget**: 2.
+- **Duration target**: 96 bars. **Repeat budget**: 2.
 
 ### Week 9: Harmony and texture
 
@@ -237,7 +238,7 @@ otherwise.
 - **Etude**: a reharmonised tune or original progression with a melody, a
   bass and a moving inner part. The plan includes a voice-budget table: what
   each track does in each section.
-- **Duration target**: 64 bars or more. **Repeat budget**: 2.
+- **Duration target**: 96 bars or more. **Repeat budget**: 2.
 
 ### Week 10: Form
 
@@ -251,10 +252,14 @@ otherwise.
   live mode for auditioning section orders, snapshots; listening away from
   the unit.
 - **Lab**: from one inventory, three different one-page plans in three
-  forms. Audition two of them roughly in live mode.
+  forms. Audition two of them roughly in live mode. Then compose three
+  transitions between the same pair of sections, each by a different means,
+  and choose one.
+- **Hours**: about 8 this week: reading 1, lab 3, etude 3 h 30 min, review
+  30 min.
 - **Etude**: realise one plan as a through-composed piece. No section may
   return unchanged.
-- **Duration target**: at least 2 min 30 s. **Repeat budget**: 2.
+- **Duration target**: at least 3 min 30 s. **Repeat budget**: 2.
 
 ### Week 11: Mix, effects and resampling
 
@@ -276,7 +281,7 @@ otherwise.
 ### Week 12: Final piece and portfolio
 
 - **Outcomes**: all.
-- **Brief**: a piece of 3 to 5 minutes using only instruments built in the
+- **Brief**: a piece of 4 to 6 minutes using only instruments built in the
   course. It must contain: a passage of counterpoint in at least three
   voices; a polyrhythm or a polymeter with a planned realignment; material
   that returns varied by a named operation; a composed transition; mix

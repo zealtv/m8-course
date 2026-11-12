@@ -17,7 +17,7 @@ week: 5
 strand: rhythm            # foundations | sound | rhythm | composition | form | production | capstone
 outcomes: [4]             # course outcome numbers from the syllabus
 needs: [1, 4]             # prerequisite weeks
-duration_target: "40 bars"
+duration_target: "56 bars"
 repeat_budget: 3
 hours: { reading: 0.75, lab: 1.75, etude: 2, review: 0.5 }
 manual_pages: "26-27, 69-72, 81"
