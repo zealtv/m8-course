@@ -11,5 +11,7 @@ Write `docs/module-template.md` and one worked sample section.
   staff-notation ideas get translated into tracker rows.
 - Voice: direct, second person, assumes music theory and programming
   literacy; defines tracker terms on first use.
+- Hardware: assume a standard unit and the manual's key names. Where headless
+  might differ, say so in a short, consistently styled note.
 - Honesty rule: mark any parameter value that has not been tried on a unit as
   a starting point to adjust by ear.

@@ -22,13 +22,16 @@ Cover, with page references:
 - A list of open questions the manual leaves unanswered, each to be tested on
   the unit by the learner rather than guessed.
 
-The learner said on 2026-11-12 that they run M8 headless, displayed through
-m8c on Knulli on a TrimUI Brick, and that the firmware "might not be bleeding
-edge". The manual describes 6.5.2 as of April 2026. So:
+The learner said on 2026-11-12 that they run M8 headless on firmware
+`M8_V6_6_4_HEADLESS.hex` (6.6.4). The manual in hand describes 6.5.2 as of
+April 2026, so the firmware runs ahead of the manual.
 
-- Ask the learner to read the firmware version off the unit and record it.
-- Note which features the manual describes that their version may lack, and
-  what headless lacks or changes compared with the hardware units (audio
-  routing, inputs, key mapping, SD card handling). Check these against the
-  manufacturer's headless documentation and changelog rather than memory.
-- Record how the manual's key names map to the handheld's buttons.
+- Write for standard hardware, with the manual's standard key names
+  ([SHIFT], [OPTION], [EDIT], [PLAY], directions). Nothing specific to the
+  learner's handheld or display client.
+- Note where headless might differ from the hardware units (audio routing
+  and inputs, microphone and speaker, battery, SD card handling, MIDI
+  connections). Check against the manufacturer's headless documentation
+  rather than memory.
+- Read the manufacturer's changelog from 6.5.2 to 6.6.4 and note what
+  changed or arrived after the manual, marked as coming from the changelog.

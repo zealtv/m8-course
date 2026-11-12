@@ -14,10 +14,10 @@ When planning or writing any part of the M8 course: who it is for, what the lear
 - The manual belongs to its manufacturer: cite by section and page, write
   original prose and diagrams, and never commit the PDF (gitignored).
 - The manual that arrived on 2026-11-12 describes version 6.5.2 (April 2026).
-  The learner said on 2026-11-12 that they run M8 headless through m8c on
-  Knulli on a TrimUI Brick, on firmware that "might not be bleeding edge";
-  the exact version has not been read off the unit. Write for that setup:
-  button names, and no assuming hardware-only features.
+  The learner said on 2026-11-12 that they run headless firmware 6.6.4
+  (`M8_V6_6_4_HEADLESS.hex`), so the firmware runs ahead of the manual.
+- Write for standard hardware with the manual's standard key names, and note
+  where headless might differ. Nothing specific to the learner's own device.
 - The plan lives on the loom under `m8-course`; the draft week outline sits in
   that goal's instructions until `docs/syllabus.md` replaces it.
 
