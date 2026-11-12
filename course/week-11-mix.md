@@ -174,7 +174,7 @@ The reset row is A's section head. Only the bass plays at row `00` (density 1), 
 
 ```phrase
 # PHRASE 00  (track 1, first phrase of chain 10: the reset row and A's head)
-0  D-3 70 01  VRE 30   VDE 00   .          ; bass note as in week 10
+0  D-3 70 00  VRE 30   VDE 00   .          ; the bass's first note
 1  .   .  .   .        .        .          ; XRZ here, with its "off" value
 ```
 
@@ -184,7 +184,7 @@ C's head, on the first phrases of row `08`'s chains:
 
 ```phrase
 # PHRASE 18  (track 1, first phrase of chain 18: C's head)
-0  D-3 70 01  VRE 40   VDE 10   .         ; every global value restated
+0  D-3 70 00  VRE 40   VDE 10   .         ; every global value restated
 ```
 
 ```phrase

@@ -398,7 +398,8 @@ E  A-5 48 12  .   .   .      ; crescendo into bar 9
 ```
 
 Reasons. The vibes have played four notes a beat through section A; three
-notes in the bar halve the density twice, so the ear expects a change. A
+notes in the bar cut the density to under a fifth (3 of 16), so the ear
+expects a change. A
 appears in three octaves across the bar, which hands the pitch from the
 old register to the new one. The glockenspiel's first two notes sit at low
 volume, so its entry sounds prepared, not sudden.
@@ -413,7 +414,7 @@ it rings across the bar line into section B on its own track.
 Allow 1 h 45 min. Keep a table in your notes as you go: instrument, algorithm,
 ratios, the partials you calculated, and one line on what you heard.
 
-1. **Bench test 5: FM modulation routing** (20 min). On a fresh FM Synth,
+1. **Bench test 5: FM modulation routing** (15 min). On a fresh FM Synth,
    algorithm `00`, C modulating D. In C's first MOD slot, assign macro 1 to
    LEV. Then, in the instrument's modulation slots, find the destination
    that drives macro 1 and put an AHD on it. Answer four questions: what
@@ -438,7 +439,7 @@ ratios, the partials you calculated, and one line on what you heard.
    *Product:* the LEV values of the first and, if you find it, second
    carrier null.
 
-4. **Tubular bell and vibraphone** (25 min). Build instruments `10` and `11`
+4. **Tubular bell and vibraphone** (20 min). Build instruments `10` and `11`
    from the worked examples. Adjust levels and decays by ear over a range of
    two octaves. For the vibraphone, find a motor speed and depth you would
    keep.

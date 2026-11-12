@@ -206,7 +206,7 @@ Each recipe lists only what differs from a fresh FM Synth, in the patch
 format of the weekly modules. `OPMOD` shows each operator's MOD slot
 assignments: `1>LEV` means macro MOD1 scales that operator's level. Slot
 lines give the instrument's modulation slots. Instrument numbers stand as
-suggestions; the bells keep week 2's numbers.
+suggestions; they match the numbers weeks 2, 3 and 4 use.
 
 All ten start as clones of one routing patch, as in week 2's lab: build the
 envelopes once, check them, then clone with [SHIFT]+[OPTION] then [EDIT] on
@@ -295,7 +295,7 @@ pair runs 1 : 14: its first sidebands at 14 − 1 = 13 and 14 + 1 = 15, then
 decay on the tine's index makes it a strike, not a tone.
 
 ```patch
-# INST 20  FMSYNTH  "TINE"
+# INST 14  FMSYNTH  "TINE"
 ALGO   07            ; [A>B]+[C>D]: body pair, tine pair
        A      B      C      D
 SHAPE  SIN    SIN    SIN    SIN
@@ -330,7 +330,7 @@ which fills in every harmonic and more; velocity decides how much of it a
 note gets.
 
 ```patch
-# INST 21  FMSYNTH  "REED"
+# INST 15  FMSYNTH  "REED"
 ALGO   07            ; [A>B]+[C>D]: reed pair, bark pair
        A      B      C      D
 SHAPE  SIN    SIN    SIN    SIN
@@ -356,7 +356,7 @@ then 1 + 2 = 3) let the line read without changing its weight. No index
 envelope: the timbre stays put.
 
 ```patch
-# INST 22  FMSYNTH  "SUB"
+# INST 16  FMSYNTH  "SUB"
 ALGO   0A            ; [A>B]+C+D: one pair; C and D silent
        A      B      C      D
 SHAPE  SIN    SIN    SIN    SIN
@@ -380,7 +380,7 @@ sine at the fundamental, so the note keeps its weight after the pluck has
 gone.
 
 ```patch
-# INST 23  FMSYNTH  "PLUCK"
+# INST 17  FMSYNTH  "PLUCK"
 ALGO   0A            ; [A>B]+C+D: pluck pair plus a free sine
        A      B      C      D
 SHAPE  SIN    SIN    SIN    SIN

@@ -395,7 +395,7 @@ A division map of this shape meets the constraints:
 | C | 29-40 | `07`-`09` | rest | 10, groove `05` | 3, groove `06` | 4, straight | 12, groove `01` |
 | D | 41-56 | `0A`-`0D` | 4, straight | 12, groove `01`; `RET 04` fills | 5, groove `08` | 8 at 67%, groove `03` | 3, groove `06` |
 
-Row *r* starts at bar 4*r* + 1, so `03` starts bar 13, `07` bar 29, `0A` bar 41; 12 + 16 + 12 + 16 = 56. The mallet's three-across figure from A returns in D over a changed bass: a return with difference.
+Row *r* starts at bar 4*r* + 1, so `03` starts bar 13, `07` bar 29, `0A` bar 41; 12 + 16 + 12 + 16 = 56. The bass's 3 : 2 groove in B (rows `10 10 10 00 00 00 00 00`, from the Concepts table) takes the library's spare number, `09`, or the next free one. The mallet's three-across figure from A returns in D over a changed bass: a return with difference.
 
 **Hand in to yourself.** The project file, a render, the plan, and three lines of reflection: which division change read most clearly, which you could not hear, and what you would do with a fourth layer.
 
