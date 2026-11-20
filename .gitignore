@@ -1,5 +1,6 @@
 .groundhog/out/
 .groundhog/fired/
+.groundhog/runtime/
 
 # The manufacturer holds copyright in the manual; keep it out of the public repository.
 *.pdf
